@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>From đặt hàng</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .form {
+        width: 750px;
+        height: 580px;
+        border: solid 1px black;
+        background-color: #e7e7e7;
+      }
+      h1 {
+        margin-left: 10px;
+      }
+      p {
+        width: 63%;
+        margin: 10px 0 40px 10px;
+      }
+      .table_input_right {
+        width: 285px;
+        height: 36px;
+        margin-left: 35px;
+      }
+      .table_input_left {
+        width: 285px;
+        height: 36px;
+        margin-left: 10px;
+      }
+      #city {
+        width: 294px;
+        height: 40px;
+      }
+      .btn_submit {
+        background-color: #077785;
+        margin: 30px 0 0 10px;
+        height: 40px;
+        width: 230px;
+        color: #e7e7e7;
+        border: solid 1px #077785;
+      }
+      .label {
+        padding-left: 10px;
+        font-weight: bold;
+      }
+      .label_right {
+        padding-left: 35px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <h1>Try a free sample</h1>
+      <p>
+        Sign up to get a coupon you can redeem at your nearest Dancing Goat cafe
+        for a sample pf the Colombia Carlos Imbachi coffee.We'll also make sure
+        you don't miss out on news introducing the new coffees that we add to
+        our store regularly.
+      </p>
+      <form action="">
+        <table width="100%" cellpadding="2">
+          <tr>
+            <td><label class="label" for="fname">First Name</label></td>
+            <td><label class="label_right" for="lname">Last name</label></td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                class="table_input_left"
+                type="text"
+                placeholder="John"
+                required
+              />
+            </td>
+            <td>
+              <input
+                class="table_input_right"
+                type="text"
+                placeholder="Smith"
+                required
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td><label class="label" for="email">Email address</label></td>
+            <td><label class="label_right" for="address">Address</label></td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                class="table_input_left"
+                type="email"
+                placeholder="John@example.com"
+              />
+            </td>
+            <td>
+              <input
+                class="table_input_right"
+                type="text"
+                placeholder="Silk St"
+                required
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td><label class="label" for="city">City</label></td>
+            <td>
+              <label class="label_right" for="state"
+                >State<span style="color: #a9a9a9; font-weight: normal"
+                  >(optional)</span
+                ></label
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                class="table_input_left"
+                type="text"
+                placeholder="London"
+                required
+              />
+            </td>
+            <td>
+              <input
+                class="table_input_right"
+                type="text"
+                placeholder=""
+                required
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td><label class="label" for="zip">Zip code</label></td>
+            <td><label class="label_right" for="country">Country</label></td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                class="table_input_left"
+                type="text"
+                placeholder="EC2y 8DS"
+                required
+              />
+            </td>
+            <td>
+              <select class="table_input_right" name="city" id="city">
+                <option value="1">United Kingdom</option>
+                <option value="2">America</option>
+                <option value="3">VietNam</option>
+                <option value="4">Japan</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <button type="submit" class="btn_submit">
+                SEND ME FREE COFFEE
+              </button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
