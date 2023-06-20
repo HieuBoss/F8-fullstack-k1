@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Access Manager</title>
+    <link rel="stylesheet" href="./css/ex3.css" />
+  </head>
+  <body>
+    <main>
+      <form action="" method="get">
+        <div>
+          <label for="username">Username:</label>
+          <input
+            class="infor"
+            type="text"
+            name="username"
+            id="username"
+            required
+          />
+        </div>
+        <div>
+          <label for="pwd">Password:</label>
+          <input class="infor" type="password" name="pwd" id="pwd" required />
+        </div>
+        <div>
+          <label for="city">City of Employment:</label>
+          <input class="infor" type="text" name="city" id="city" required />
+        </div>
+        <div>
+          <label for="web_sever">Wed server:</label>
+          <select class="infor" name="web_sever" id="web_sever">
+            <option value="">--Choose a server--</option>
+            <option value="1">Asia</option>
+            <option value="2">Europe</option>
+            <option value="3">Africa</option>
+            <option value="4">North America</option>
+            <option value="5">South America</option>
+          </select>
+        </div>
+        <div class="work-item">
+          <label>Please specify your role:</label>
+          <label class="role"><input type="radio" name="work" />Admin</label>
+          <label class="role"><input type="radio" name="work" />Engineer</label>
+          <label class="role"><input type="radio" name="work" />Manager</label>
+          <label class="role"><input type="radio" name="work" />Guest</label>
+        </div>
+        <div class="sign-on">
+          <label>Single Sign-on to the following:</label>
+          <label><input type="checkbox" name="login" />Mail</label>
+          <label><input type="checkbox" name="login" />Payral</label>
+          <label><input type="checkbox" name="login" />Self-sevice</label>
+        </div>
+        <div>
+          <button class="btn-submit" type="submit">Login</button>
+          <button class="btn-reset" type="reset">Reset</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

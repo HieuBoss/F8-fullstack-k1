@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+form div{
+    margin-top: 10px;
+}
+label{
+    display: inline-block;
+    vertical-align: top;
+    width: 10%;
+}
+.infor{
+    border:solid 2px #a4cff2  ;
+}
+.btn-submit{
+    margin-left: 10%;
+    border: solid 2px #a4cff2;
+    padding: 5px;
+    border-radius: 5px;
+}
+.btn-reset{
+    border: solid 2px #a4cff2;
+    padding: 5px;
+    border-radius: 5px;
+}
+.work-item{
+    display: flex;
+    flex-grow: 1;
+}
+.role{
+    display: block;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form liên hệ</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header-title">CONTACT US</h1>
+    </header>
+    <aside>
+      <h2>Contact Infor</h2>
+      <ul>
+        <li>
+          <i class="fa-sharp fa-solid fa-location-dot"></i> 321 Awesome Street
+          New York, NY 17022
+        </li>
+        <li>
+          <i class="fa-sharp fa-regular fa-envelope"></i> infor@companyname.com
+        </li>
+        <li><i class="fa-solid fa-phone"></i> +1 800 123 1234</li>
+      </ul>
+    </aside>
+    <main>
+      <h2>Having Any Query! Or Book an appointment</h2>
+      <form action="" method="get">
+        <div>
+          <input
+            class="information"
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            class="information"
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+          />
+          <input
+            class="information"
+            type="text"
+            name="subject"
+            placeholder="Subject"
+            required
+          />
+          <textarea
+            class="information"
+            name="message"
+            cols="30"
+            rows="10"
+            placeholder="Message"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+    </main>
+  </body>
+</html>
