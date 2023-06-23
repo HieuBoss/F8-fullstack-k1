@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+html{
+    font-size: 80%;
+} 
+.content {
+    background-color: #334455;
+    width: 60%;
+    border-radius: 10px;
+}
+.form_heading{
+    padding-left: 1.5em;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.title .heading_highlight{
+    color: #d68c18;
+}
+.form_sub{
+    padding: 1.5em;
+    margin-top: -1.2em;
+}
+.form_input-email{
+    padding: 0.5em;
+    border-radius: 5px;
+}
+.form_input-email:hover::placeholder{
+    color: #d68c18;
+}
+.form_input-email:hover{
+    background-color: #ddd;
+}
+.form_bt-submit{
+    padding: 0.5em;
+    border-radius: 5px;
+}
+.form_bt-submit:hover{
+    background-color: #d68c18;
+    color: #fff;
+}

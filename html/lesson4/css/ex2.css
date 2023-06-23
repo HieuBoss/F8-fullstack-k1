@@ -1,0 +1,58 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+html{
+    font-size: 80%;
+}
+:root{
+    --font-first: 'Alfa Slab One',cursive;
+    --font-last: 'Bebas Neue', sans-serif;
+} 
+.booking{
+    width: 50%;
+    border: solid 1px black;
+}
+.title_small{
+    text-align: center;
+    font-size: 1.5em;
+    font-family: var(--font-last);
+    color: #3a2617;
+}
+.title_large{
+    text-align: center;
+    font-size: 2.5em;
+    font-family: var(--font-first);
+    color: #3a2617;
+}
+.form_booking{
+    text-align: center;
+}
+.form_booking--input{
+    margin: 0.7em;
+    padding: 0.75em;
+    
+}
+.form_booking--input::placeholder{
+    color: black;
+    font-family: var(--font-last);
+    font-weight: bold;
+}
+.form_booking--input:hover{
+    background-color: rgb(221, 221, 221);
+}
+.btn_booking--submit{
+    margin: 0.5em;
+    width: 14.2em;
+    padding: 0.6em;
+    font-family: var(--font-first);
+    font-weight: bold;
+    color: aliceblue;
+    background-color: #b0332b;
+    border-radius: 5px;
+    border: solid 1px #b0332b;
+}
+.btn_booking--submit:hover{
+    background-color: rgb(102, 0, 0);
+    color: rgb(114, 255, 246);
+}

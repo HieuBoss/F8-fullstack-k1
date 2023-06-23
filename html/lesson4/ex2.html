@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form đặt bàn</title>
+    <link rel="stylesheet" href="./css/ex2.css" />
+  </head>
+  <body>
+    <section class="booking">
+      <h2 class="title_small">RESERVATION</h2>
+      <h2 class="title_large">BOOK YOUR TABLE</h2>
+      <form class="form_booking" action="" method="get">
+        <div>
+          <input
+            class="form_booking--input"
+            type="text"
+            placeholder="NAME"
+            required
+          />
+          <input
+            class="form_booking--input"
+            type="email"
+            placeholder="EMAIL"
+            required
+          />
+        </div>
+        <div>
+          <input
+            class="form_booking--input"
+            type="datetime"
+            placeholder="DATE"
+            required
+          />
+          <input
+            class="form_booking--input"
+            type="text"
+            placeholder="TIME"
+            required
+          />
+        </div>
+        <div>
+          <input
+            class="form_booking--input"
+            type="number"
+            placeholder="PEOPLE"
+            required
+          />
+          <button class="btn_booking--submit" type="submit">
+            Find A Table
+          </button>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>
