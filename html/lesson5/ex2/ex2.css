@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+}
+input[type="radio"] {
+  appearance: none; /* CSS3 */
+  outline: none; /* Loại bỏ đường viền khi radio button được focus */
+}
+
+input[type="radio"]::before {
+  content: ""; /* Loại bỏ nội dung trước radio button */
+  display: inline-block;
+}
+.list_content {
+  background-color: #d95925;
+  color: aliceblue;
+  font-size: 2em;
+  position: relative;
+}
+.infor {
+  display: none;
+  font-size: 1.5em;
+}
+.edit_infor {
+  font-weight: bold;
+}
+input:checked ~ .infor {
+  display: block;
+}
+input:not(input[type="checkbox"]):focus ~ p {
+  display: block;
+}
+.content label::before {
+  content: " + ";
+}
+.content input:checked ~ label::before {
+  content: " - ";
+}
