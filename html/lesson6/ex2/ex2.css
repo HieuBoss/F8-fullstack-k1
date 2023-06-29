@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  background: #ebf5fe;
+}
+html {
+  font-size: 62.5%;
+}
+a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+article {
+  padding-top: 2em;
+  width: 100%;
+}
+.item_list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 55%;
+  margin: 0 auto;
+}
+.service__item {
+  width: 33%;
+}
+.service__item-head {
+  display: flex;
+  height: 50px;
+}
+.service__item-wrap {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  width: 80%;
+  box-shadow: 1px 1px 1px 1px rgb(184, 184, 184);
+}
+.service__item-wrap:hover {
+  border: 1px solid red;
+}
+.icon__service {
+  padding: 15px;
+  border-radius: 99px;
+  font-size: 20px;
+  color: #fff;
+}
+.item_heading {
+  margin: 8px;
+  max-width: 90px;
+}
+.fa-brush {
+  background: linear-gradient(105deg, #e45e77 0%, #e47961 75%);
+  transform: rotate(45deg);
+}
+.fa-newspaper {
+  background: linear-gradient(105deg, #50a6a4 0%, #75d1a0 75%);
+}
+.fa-bolt {
+  background: linear-gradient(105deg, #e28934 0%, #f2ba47 75%);
+}
+.fa-rocket {
+  background: linear-gradient(105deg, #326cce 0%, #6b8ef1 75%);
+  transform: rotate(255deg);
+}
+.fa-layer-group {
+  background: linear-gradient(105deg, #7124cb 0%, #b054e6 75%);
+}
+.fa-envelope {
+  background: linear-gradient(105deg, #6b8b2e 0%, #8ebf51 75%);
+}
+p {
+  margin: 20px 0;
+  font-size: 1.2em;
+  color: #666666;
+}

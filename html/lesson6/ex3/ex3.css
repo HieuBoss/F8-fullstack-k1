@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --white-color: #ffffff;
+  --heading-color: #171719;
+  --text-color: #717171;
+  --primary-color: #ff574d;
+}
+body {
+  font-family: "Nunito", sans-serif;
+  background-image: url(http://uiwebsoft.com/justlog/login-one/images/login-bg2.jpg);
+}
+html {
+  font-size: 62.5%;
+}
+a {
+  text-decoration: none;
+}
+.form {
+  width: 750px;
+
+  max-width: 100%;
+  margin: 0 auto;
+}
+.body__form {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login__form {
+  width: 100%;
+  height: 450px;
+}
+.login__form-left {
+  position: relative;
+  width: 37%;
+  height: 100%;
+  background: var(--primary-color);
+  float: left;
+  display: flex;
+  align-items: center;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  text-align: center;
+}
+.login__form-right {
+  width: 63%;
+  height: 100%;
+  background: var(--white-color);
+  float: right;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.form__left-logo {
+  margin-top: 80px;
+  font-weight: 900;
+  font-size: 2.5em;
+  color: var(--white-color);
+}
+.form__left-logo span {
+  border-radius: 5px;
+  background: var(--white-color);
+  color: var(--primary-color);
+  padding: 1px 7px;
+}
+.form__left-desc {
+  color: var(--white-color);
+  margin: 40px 15px;
+  font-size: 1.2em;
+}
+.form__left-btn {
+  padding: 10px 40px;
+  border-radius: 3px;
+  background: var(--white-color);
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.3em;
+}
+.form__left-btn:hover {
+  background-color: #ed3c33;
+  color: var(--white-color);
+}
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+li {
+  padding: 7px 9px;
+  font-size: 1.2em;
+  border-radius: 3px;
+  margin: 50px 5px;
+  background: #ed3c33;
+}
+.form__left-social {
+  color: var(--white-color);
+}
+.login__form-right {
+  text-align: center;
+}
+.heading__login {
+  margin-top: 60px;
+  font-size: 3em;
+}
+.heading__login span {
+  color: var(--primary-color);
+  display: inline-block;
+}
+.heading__login span::after {
+  content: "";
+  border-bottom: 2px solid var(--primary-color);
+  display: block;
+  width: 30%;
+}
+.form__input {
+  margin-top: 20px;
+}
+.form__input-email input,
+.form__input-pwd input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px rgb(199, 199, 199);
+  border: 1px solid rgb(199, 199, 199);
+}
+.form_checkbox {
+  display: flex;
+  margin-left: 10%;
+  font-size: 1.1em;
+}
+.form_checkbox label span {
+  margin-left: 5px;
+}
+.form__forgot {
+  position: absolute;
+  margin-left: 350px;
+  margin-top: -1.5%;
+  font-size: 1.1em;
+}
+.form__forgot a {
+  color: var(--text-color);
+}
+.btn__login button {
+  width: 80%;
+  padding: 10px;
+  margin-top: 30px;
+  border-radius: 3px;
+  background: var(--primary-color);
+  color: var(--white-color);
+  border: 1px solid var(--primary-color);
+  font-weight: 500;
+}
+.check__account {
+  margin-top: 30px;
+}
+.check__account span {
+  font-size: 1.2em;
+  color: var(--text-color);
+}
+.login__form-left::after {
+  content: "\f061";
+  position: absolute;
+  right: -25px;
+  padding: 15px;
+  font-size: 1.5em;
+  border-radius: 99px;
+  background: var(--white-color);
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  box-shadow: 0px 8px 16px rgb(0, 0, 0, 0.25);
+}
