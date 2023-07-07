@@ -27,8 +27,6 @@ html {
   min-height: 100vh;
 }
 
-/* HEADER CART */
-
 .header__cart {
   display: flex;
   align-items: center;
@@ -52,7 +50,7 @@ html {
   background-color: #2c4bd9;
   color: #fff;
   border-radius: 50%;
-  font-size: 12px;
+  font-size: 1.2rem;
   width: 18px;
   height: 18px;
   text-align: center;
@@ -61,12 +59,11 @@ html {
 
 .header__cart i {
   margin-right: 20px;
-  font-size: 22px;
+  font-size: 2rem;
   color: #eb5b2d;
   cursor: pointer;
 }
 
-/* CART */
 .product__container {
   height: 300px;
   overflow: auto;
@@ -103,14 +100,14 @@ html {
 }
 
 .product__name-action .product__name {
-  font-size: 14px;
+  font-size: 1.4rem;
   color: #777777;
   font-weight: 500;
   margin-right: 40px;
 }
 
 .product__name-action .product__action i {
-  font-size: 14px;
+  font-size: 1.4rem;
   color: #777777;
   cursor: pointer;
 }
@@ -128,14 +125,14 @@ html {
 
 .product__price .product__number span {
   color: #777777;
-  font-size: 12px;
+  font-size: 1.2rem;
   padding: 0px 10px;
 }
 
 .product__price .product__number i {
   display: inline-block;
   color: #777777;
-  font-size: 12px;
+  font-size: 1.2rem;
   cursor: pointer;
 }
 
@@ -153,7 +150,6 @@ html {
   font-weight: 700;
 }
 
-/* Subtotal cart */
 .subtotal {
   background-color: #f4f4f4;
   padding: 16px 30px;
@@ -167,13 +163,13 @@ html {
 }
 
 .subtotal__detail .subtotal__title {
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 700;
 }
 
 .subtotal__detail .subtotal__price {
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 1.8rem;
+  font-weight: 700;
   color: #eb5b2d;
 }
 
@@ -182,7 +178,6 @@ html {
   color: #777777;
 }
 
-/* Button action */
 .btn__add,
 .btn__view {
   width: 90%;
@@ -207,7 +202,6 @@ button:hover {
   opacity: 0.9;
 }
 
-/* Footer Cart */
 .footer__cart {
   display: flex;
   align-items: center;
@@ -227,6 +221,6 @@ button:hover {
 
 .footer__cart .footer__desc {
   margin-left: 30px;
-  font-size: 15px;
+  font-size: 1.5rem;
   font-weight: 700;
 }
