@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  color: #272626;
+}
+
+.form__item,
+textarea,
+option {
+  font-family: inherit;
+  font-size: inherit;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 17px 20px;
+  outline: none;
+  width: 100%;
+}
+
+.container {
+  width: 870px;
+  max-width: calc(100% - 48px);
+  margin: 50px auto;
+  text-align: center;
+  padding: 50px;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.225);
+}
+
+.form__header-heading {
+  font-size: 4rem;
+  font-weight: 600;
+  word-spacing: 5px;
+}
+
+.form__header-desc {
+  margin: 20px 0 50px;
+  font-size: 2rem;
+}
+
+.form-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 20px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+select.form__item {
+  position: relative;
+  color: #a2a2a2;
+  font-size: 1.5rem;
+  padding: 13px;
+}
+.form__item:focus,
+textarea:focus {
+  border-color: rgba(137, 43, 226, 0.589);
+}
+
+textarea {
+  position: relative;
+  width: 100%;
+  height: 150px;
+}
+.form__group {
+  position: relative;
+  flex-basis: calc(100% / 2 - 10px);
+}
+
+.form__textarea {
+  position: relative;
+}
+
+label {
+  position: absolute;
+  display: inline-block;
+  font-size: 1.5rem;
+  padding: 3px 5px;
+  border-radius: 5px;
+  left: 17px;
+  top: 13px;
+  color: #a2a2a2;
+  transition: 0.25s ease;
+}
+
+.form__btn {
+  margin-top: 30px;
+}
+
+.btn {
+  font-family: inherit;
+  display: inline-block;
+  padding: 15px 20px;
+  outline: none;
+  background: #4c77d8;
+  border: none;
+  border-radius: 99px;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.btn:hover {
+  transform: scale(1.15);
+}
+.form__item:focus + label,
+.form__item:not(:placeholder-shown) + label,
+.form__textarea textarea:focus + label {
+  top: -25%;
+  transform: scale(0.9) translateY(50%);
+}
+.form__textarea textarea:focus + label,
+.form__textarea textarea:not(:placeholder-shown) + label {
+  top: -10px;
+}

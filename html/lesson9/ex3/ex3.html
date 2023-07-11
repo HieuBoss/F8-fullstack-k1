@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập 3</title>
+    <link rel="stylesheet" href="./ex3.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css"
+      integrity="sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="container">
+          <!-- form header -->
+          <div class="form__header">
+            <h2 class="form__header-heading">Drop Us a Line</h2>
+            <p class="form__header-desc">
+              Reach out to us from our contact form and we get back to you
+              shortly
+            </p>
+          </div>
+
+          <!-- form content -->
+          <div class="form__info">
+            <form action="">
+              <div class="form-content">
+                <!-- First Name -->
+                <div class="form__group">
+                  <input
+                    class="form__item"
+                    type="text"
+                    name="firstname"
+                    id="firstname"
+                    placeholder=" "
+                  />
+                  <label for="firstname">First Name *</label>
+                </div>
+
+                <!-- Last Name -->
+                <div class="form__group">
+                  <input
+                    class="form__item"
+                    type="text"
+                    name="lastname"
+                    id="lastname"
+                    placeholder=" "
+                  />
+                  <label for="lastname">Last Name *</label>
+                </div>
+
+                <!-- Email -->
+                <div class="form__group">
+                  <input
+                    class="form__item"
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder=" "
+                  />
+                  <label for="email">Email *</label>
+                </div>
+
+                <!-- Option -->
+                <div class="form__group">
+                  <select
+                    name="option"
+                    id="option"
+                    class="form__option form__item"
+                  >
+                    <option value="1">Sales</option>
+                    <option value="2">Select a department</option>
+                    <option value="3">Marketing</option>
+                    <option value="4">Customer Support</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Textarea -->
+              <div class="form__textarea">
+                <textarea
+                  name="message"
+                  id="message"
+                  cols="30"
+                  rows="10"
+                  placeholder=" "
+                ></textarea>
+                <label for="firstname">Message *</label>
+              </div>
+              <!-- Form-Btn -->
+              <div class="form__btn">
+                <button class="btn" type="submit">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
