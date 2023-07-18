@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #f55253;
+  --second-color: #4d4d4d;
+  --white-color: #fff;
+  --black-color: #000;
+  --footer-color: #676767;
+  --background-color: #f9eded;
+}
+html {
+  font-size: 62.5%;
+}
+
+ul {
+  list-style: none;
+}
+button {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+hr {
+  border: 1px solid #ebebeb;
+}
