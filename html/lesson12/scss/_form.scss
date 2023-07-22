@@ -60,8 +60,8 @@ input#click_register:checked ~ .page-form .page-form__register {
         padding: 18px;
         font-size: 1.6rem;
         font-weight: 700;
-        &:not(:placeholder-shown) + .label-input-text,
-        &:focus + .label-input-text {
+        &:focus + .label-input-text,
+        &:not(:placeholder-shown) + .label-input-text{
             top: -17%;
             left: 14px;
             transform: scale(0.7);

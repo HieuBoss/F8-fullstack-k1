@@ -144,11 +144,11 @@ input#click_register:checked ~ .page-form .page-form__register {
   font-size: 1.6rem;
   font-weight: 700;
 }
-.form-input input[type=text]:not(:placeholder-shown) + .label-input-text, .form-input input[type=text]:focus + .label-input-text,
-.form-input input[type=email]:not(:placeholder-shown) + .label-input-text,
+.form-input input[type=text]:focus + .label-input-text, .form-input input[type=text]:not(:placeholder-shown) + .label-input-text,
 .form-input input[type=email]:focus + .label-input-text,
-.form-input input[type=password]:not(:placeholder-shown) + .label-input-text,
-.form-input input[type=password]:focus + .label-input-text {
+.form-input input[type=email]:not(:placeholder-shown) + .label-input-text,
+.form-input input[type=password]:focus + .label-input-text,
+.form-input input[type=password]:not(:placeholder-shown) + .label-input-text {
   top: -17%;
   left: 14px;
   transform: scale(0.7);
