@@ -1,18 +1,23 @@
-.page-form__login,
-.page-form__register {
+.page-form__login
+ {
     display: block;
     padding: 40px 32px;
     border-radius: 12px;
     background-color: $whitecolor;
 }
-
+.page-form__register{
+    display: none;
+    padding: 40px 32px;
+    border-radius: 12px;
+    background-color: $whitecolor;
+}
 input#click_register:checked ~ .page-form .page-form__login {
     display: none;
     
 }
 
-input#click_login:checked ~ .page-form .page-form__register {
-    display: none;
+input#click_register:checked ~ .page-form .page-form__register {
+    display: block;
 }
 
 .page-form {
@@ -37,36 +42,40 @@ input#click_login:checked ~ .page-form .page-form__register {
     .label-input-text {
         position: absolute;
         left: 18px;
+        top: 15px;
         font-size: 1.7rem;
         color: $textFormColor;
         font-weight: 600;
         padding: 0 10px;
         background-color: #fff;
+        transition: all 0.3s ease-in-out;
     }
-}
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    height: 54px;
-    border: 1px solid $borderInputColor;
-    border-radius: 12px;
-    padding: 18px;
-    font-size: 1.6rem;
-    font-weight: 700;
-    &:not(:placeholder-shown) + .label-input-text,
-    &:focus + .label-input-text {
-        top: -17%;
-        left: 14px;
-        transform: scale(0.7);
-        transform-origin: left;
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        height: 54px;
+        border: 1px solid $borderInputColor;
+        border-radius: 12px;
+        padding: 18px;
+        font-size: 1.6rem;
+        font-weight: 700;
+        &:not(:placeholder-shown) + .label-input-text,
+        &:focus + .label-input-text {
+            top: -17%;
+            left: 14px;
+            transform: scale(0.7);
+            transform-origin: left;
+        }
+
+        &:not(:placeholder-shown),
+        &:focus {
+            border-color: #615dfa;
+        }
     }
 
-    &:not(:placeholder-shown),
-    &:focus {
-        border-color: #615dfa;
-    }
 }
+
 
 .login-form__check{
     display: flex;

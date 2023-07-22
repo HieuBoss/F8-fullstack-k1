@@ -81,9 +81,15 @@ section {
     display: none;
   }
 }
-.page-form__login,
-.page-form__register {
+.page-form__login {
   display: block;
+  padding: 40px 32px;
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+.page-form__register {
+  display: none;
   padding: 40px 32px;
   border-radius: 12px;
   background-color: #fff;
@@ -93,8 +99,8 @@ input#click_register:checked ~ .page-form .page-form__login {
   display: none;
 }
 
-input#click_login:checked ~ .page-form .page-form__register {
-  display: none;
+input#click_register:checked ~ .page-form .page-form__register {
+  display: block;
 }
 
 .page-form {
@@ -119,16 +125,17 @@ input#click_login:checked ~ .page-form .page-form__register {
 .form-input .label-input-text {
   position: absolute;
   left: 18px;
+  top: 15px;
   font-size: 1.7rem;
   color: #adafca;
   font-weight: 600;
   padding: 0 10px;
   background-color: #fff;
+  transition: all 0.3s ease-in-out;
 }
-
-input[type=text],
-input[type=email],
-input[type=password] {
+.form-input input[type=text],
+.form-input input[type=email],
+.form-input input[type=password] {
   width: 100%;
   height: 54px;
   border: 1px solid #dedeea;
@@ -137,21 +144,21 @@ input[type=password] {
   font-size: 1.6rem;
   font-weight: 700;
 }
-input[type=text]:not(:placeholder-shown) + .label-input-text, input[type=text]:focus + .label-input-text,
-input[type=email]:not(:placeholder-shown) + .label-input-text,
-input[type=email]:focus + .label-input-text,
-input[type=password]:not(:placeholder-shown) + .label-input-text,
-input[type=password]:focus + .label-input-text {
+.form-input input[type=text]:not(:placeholder-shown) + .label-input-text, .form-input input[type=text]:focus + .label-input-text,
+.form-input input[type=email]:not(:placeholder-shown) + .label-input-text,
+.form-input input[type=email]:focus + .label-input-text,
+.form-input input[type=password]:not(:placeholder-shown) + .label-input-text,
+.form-input input[type=password]:focus + .label-input-text {
   top: -17%;
   left: 14px;
   transform: scale(0.7);
   transform-origin: left;
 }
-input[type=text]:not(:placeholder-shown), input[type=text]:focus,
-input[type=email]:not(:placeholder-shown),
-input[type=email]:focus,
-input[type=password]:not(:placeholder-shown),
-input[type=password]:focus {
+.form-input input[type=text]:not(:placeholder-shown), .form-input input[type=text]:focus,
+.form-input input[type=email]:not(:placeholder-shown),
+.form-input input[type=email]:focus,
+.form-input input[type=password]:not(:placeholder-shown),
+.form-input input[type=password]:focus {
   border-color: #615dfa;
 }
 
