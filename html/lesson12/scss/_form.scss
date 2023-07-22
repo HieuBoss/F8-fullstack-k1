@@ -50,6 +50,7 @@ input#click_register:checked ~ .page-form .page-form__register {
         background-color: #fff;
         transition: all 0.3s ease-in-out;
     }
+
     input[type="text"],
     input[type="email"],
     input[type="password"] {
@@ -60,6 +61,7 @@ input#click_register:checked ~ .page-form .page-form__register {
         padding: 18px;
         font-size: 1.6rem;
         font-weight: 700;
+        
         &:focus + .label-input-text,
         &:not(:placeholder-shown) + .label-input-text{
             top: -17%;
