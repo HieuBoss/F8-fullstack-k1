@@ -1,0 +1,55 @@
+.page-infor__click{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    %btn{
+        padding: 15px 0;
+        width: 27%;
+        border: 1px solid $whitecolor;
+        cursor: pointer;
+    }
+    &--login{
+        @extend %btn;
+        border-radius: 10px 0 0 10px;
+    }
+    &--register{
+        @extend %btn;
+        border-radius: 0 10px 10px 0;
+    }
+}
+
+#click_login:checked ~ .page-infor .page-infor__click .page-infor__click--login {
+    background-color: #fff;
+    label {
+        color: $primaryColorText;
+    }
+}
+
+#click_register:checked ~ .page-infor .page-infor__click .page-infor__click--register {
+    background-color: #fff;
+    label {
+        color: $primaryColorText;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .page-infor__click {
+        margin-top: 5%;
+        %btn{
+            padding: 15px 0;
+            width: 40%;
+            border: 1px solid $whitecolor;
+            cursor: pointer;
+        }
+        &--login{
+            @extend %btn;
+            border-radius: 10px 0 0 10px;
+        }
+        &--register{
+            @extend %btn;
+            border-radius: 0 10px 10px 0;
+        }
+    }
+}

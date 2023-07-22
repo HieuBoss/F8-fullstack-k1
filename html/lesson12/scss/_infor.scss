@@ -1,0 +1,43 @@
+.page-infor{
+    width: 55%;    
+    color: $whitecolor;
+    text-align: center;
+    &__logo{
+        font-size: 6rem;
+        margin-bottom: 30px;
+    }
+    &__head{
+        font-weight: 500;
+    }
+    &__name{
+        font-family: "Titillium Web", sans-serif;
+        font-size: 10rem;
+        font-weight: 900;
+        position: relative;
+        top: -30px;
+        margin-bottom: -30px;
+    }
+    &__desc{
+        width: 384px;
+        margin: 30px auto 0;
+        font-size: 1.8rem;
+        line-height: 1.3333333333em;
+        font-weight: 500;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .page-infor{
+        width: 100%;    
+        &__name{
+            font-family: "Titillium Web", sans-serif;
+            font-size: 9rem;
+            font-weight: 900;
+            position: relative;
+            top: -30px;
+        }
+        &__desc{
+            display: none;
+        }
+    }
+}
