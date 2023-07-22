@@ -1,20 +1,18 @@
 .page-form__login,
 .page-form__register {
+    display: block;
+    padding: 40px 32px;
+    border-radius: 12px;
+    background-color: $whitecolor;
+}
+
+input#click_register:checked ~ .page-form .page-form__login {
     display: none;
+    
 }
 
-input#click_login:checked ~ .page-form .page-form__login {
-    display: block;
-    padding: 40px 32px;
-    border-radius: 12px;
-    background-color: $whitecolor;
-}
-
-input#click_register:checked ~ .page-form .page-form__register {
-    display: block;
-    padding: 40px 32px;
-    border-radius: 12px;
-    background-color: $whitecolor;
+input#click_login:checked ~ .page-form .page-form__register {
+    display: none;
 }
 
 .page-form {
