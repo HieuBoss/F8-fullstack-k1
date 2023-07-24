@@ -1,0 +1,46 @@
+// .col-1 {
+//   width: 10%;
+// }
+// .col-2 {
+//   width: 20%;
+// }
+// .col-3 {
+//   width: 30%;
+// }
+// @for $i from 1 through 12 {
+//   $rate: 15%;
+//   @if ($i % 2 == 0) {
+//     $rate: 10%;
+//   }
+//   .col-#{$i} {
+//     width: $i * $rate;
+//   }
+// }
+// $sizes: 20, 40, 60, 80;
+
+// @each $size in $sizes {
+//   .col-#{$size} {
+//     width: #{$size * 2%};
+//   }
+// }
+// $sizes: (small, 20, italic), (medium, 40, normal), (large, 60, bold);
+// @each $name, $size, $style in $sizes {
+//   .col-#{$name} {
+//     width: #{$size * 2%};
+//     @if ($style != bold) {
+//       font-style: $style;
+//     } @else {
+//       font-weight: bold;
+//     }
+//   }
+// }
+$sizes: (
+  small: 20,
+  medium: 40,
+  large: 60,
+);
+@each $name, $size in $sizes {
+  .col-#{ $name} {
+    width: #{$size * 2%};
+  }
+}

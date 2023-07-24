@@ -1,0 +1,59 @@
+.header {
+  height: $height;
+  display: flex;
+  align-items: center;
+  .search-form {
+    display: flex;
+    align-items: center;
+    column-gap: 18px;
+    margin-right: auto;
+    .search {
+      background: $white-color;
+      &::placeholder {
+        color: rgba($color: #000, $alpha: 0.2);
+        font-size: 1.8rem;
+        font-weight: 600;
+      }
+    }
+  }
+  .nav__header {
+    display: flex;
+    column-gap: 46px;
+    .nav-link {
+      position: relative;
+      display: flex;
+      color: $black-color;
+      font-size: 1.8rem;
+      font-weight: 600;
+      padding: 8px 0;
+      &::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: $black-color;
+        transition: width 0.3s linear;
+      }
+      &:hover::after,
+      &.active::after {
+        width: 100%;
+      }
+    }
+  }
+  .actions {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    column-gap: 26px;
+
+    .show-list {
+      padding: 10px;
+      background-color: $white-color;
+      & i {
+        font-size: 2rem;
+      }
+    }
+  }
+}

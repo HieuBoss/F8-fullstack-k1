@@ -1,0 +1,22 @@
+:root {
+  --primary-color: red;
+}
+
+body {
+  font-size: 1.6rem;
+}
+$prefix: ".col";
+$breakpoint: "";
+$number: 1;
+
+$selector:"";
+@if $breakpoint != "" and $number > 0{
+    $selector:$prefix + "-" + $breakpoint + "-" + $number;
+}@else if $number > 0{
+    $selector: $prefix + "-" + $number;
+}@else{
+    $selector: $prefix;
+}
+#{$selector} {
+width: 50%;
+}
