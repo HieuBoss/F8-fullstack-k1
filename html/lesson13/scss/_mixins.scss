@@ -5,19 +5,19 @@
     align-items: center;
   }
 }
-@mixin screen($break-point) {
-  @if $break-point == mobile {
+@mixin screen($device) {
+  @if $device == mobile {
     @media (max-width: 768px) {
       @content;
     }
   }
-  @if $break-point == tablet {
+  @if $device == tablet {
     @media (min-width: 768px) and (max-width: 991px) {
       @content;
     }
   }
 
-  @if $break-point == pc {
+  @if $device == desktop {
     @media (min-width: 992px) {
       @content;
     }
