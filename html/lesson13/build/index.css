@@ -308,9 +308,13 @@ a {
 }
 .main .wide {
   grid-column: span 2;
+  overflow: hidden;
+  border-radius: 15px;
 }
 .main .tall {
   grid-row: span 2;
+  overflow: hidden;
+  border-radius: 15px;
 }
 .main img {
   width: 100%;
@@ -319,7 +323,7 @@ a {
   transition: transform 0.3s linear;
 }
 .main img:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 
 /*# sourceMappingURL=index.css.map */
