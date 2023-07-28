@@ -1,0 +1,247 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: $whiteColor;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+  .row {
+    align-items: center;
+  }
+  &-logo {
+    margin-left: -7px;
+  }
+  a {
+    display: flex;
+  }
+
+  &-right {
+    display: flex;
+    margin-left: auto;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+
+    &-link {
+      position: relative;
+      font-size: 1.6667rem;
+      font-weight: 600;
+      font-family: $fontFamily;
+      line-height: 2.1667rem;
+      font-style: normal;
+      padding: 54px 0 34.67px 0;
+      left: -1px;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background: $primaryColor;
+        transition: width 0.5s;
+      }
+      &:hover::after,
+      &.active::after {
+        width: 100%;
+      }
+
+      &.active,
+      &:hover {
+        color: $primaryColor;
+      }
+    }
+  }
+  &-icon {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+    margin-left: 50px;
+    margin-top: 16px;
+    margin-right: -5px;
+    .cart {
+      position: relative;
+
+      span {
+        position: absolute;
+        right: -6px;
+        top: -6px;
+        background: $secondaryColor;
+        color: $whiteColor;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 13px;
+        height: 13px;
+        padding: 8px;
+        font-family: Inter;
+        font-size: 1.1rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px;
+      }
+    }
+    .show {
+      background: white;
+    }
+    .show i {
+      font-size: 2rem;
+    }
+  }
+}
+
+@include screen(mobile) {
+  .header-logo {
+    display: flex;
+    justify-content: center;
+  }
+  .header-right {
+    .nav {
+      position: fixed;
+      background: $whiteColor;
+      box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+      top: 0;
+      left: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 250px;
+      translate: (-100%);
+      @include transition(translate);
+      &-link {
+        font-size: 1.7rem;
+        font-weight: 600;
+        font-family: $fontFamily;
+        line-height: 22px;
+        font-style: normal;
+        width: 100%;
+        padding: 20px 30px;
+      }
+    }
+    .show_nav {
+      &:checked {
+        ~ .nav {
+          translate: 0;
+        }
+        ~ .overlay {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+  .overlay {
+    background: #00000079;
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    @include transition(opacity);
+  }
+}
+
+@include screen(ipad) {
+  .header-right {
+    .nav {
+      position: fixed;
+      background: $whiteColor;
+      box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+      top: 0;
+      left: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 350px;
+      translate: (-100%);
+      @include transition(translate);
+      &-link {
+        font-size: 1.7rem;
+        font-weight: 600;
+        font-family: $fontFamily;
+        line-height: 22px;
+        font-style: normal;
+        width: 100%;
+        padding: 20px 30px;
+      }
+    }
+    .show_nav {
+      &:checked {
+        ~ .nav {
+          translate: 0;
+        }
+        ~ .overlay {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+  .overlay {
+    background: #00000079;
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    @include transition(opacity);
+  }
+}
+@include screen(tablet) {
+  .header-right {
+    .nav {
+      position: fixed;
+      background: $whiteColor;
+      box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+      top: 0;
+      left: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 350px;
+      translate: (-100%);
+      @include transition(translate);
+      &-link {
+        font-size: 1.7rem;
+        font-weight: 600;
+        font-family: $fontFamily;
+        line-height: 22px;
+        font-style: normal;
+        width: 100%;
+        padding: 20px 30px;
+      }
+    }
+    .show_nav {
+      &:checked {
+        ~ .nav {
+          translate: 0;
+        }
+        ~ .overlay {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+  .overlay {
+    background: #00000079;
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    @include transition(opacity);
+  }
+}
+@include screen(desktop) {
+  .header-right {
+    .show {
+      display: none;
+    }
+    .overlay {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+// import parts
+@import "parts/variables";
+@import "parts/fonts";
+@import "parts/reset";
+@import "parts/root";
+@import "parts/mixins";
+@import "parts/base";
+@import "parts/grid";
+// import layouts
+@import "layouts/header";
+@import "layouts/main";
+@import "layouts/footer";

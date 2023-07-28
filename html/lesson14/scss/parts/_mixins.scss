@@ -1,0 +1,27 @@
+@mixin screen($device) {
+  @if $device == mobile {
+    @media (max-width: 575px) {
+      @content;
+    }
+  }
+  @if $device == ipad {
+    @media (min-width: 576px) and (max-width: 767px) {
+      @content;
+    }
+  }
+  @if $device == tablet {
+    @media (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  }
+
+  @if $device == desktop {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+}
+@mixin transition($property: all, $duration: 0.4s, $timingFunc: ease) {
+  transition: $duration $timingFunc;
+  transition-property: $property;
+}
