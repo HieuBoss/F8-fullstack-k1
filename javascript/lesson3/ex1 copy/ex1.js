@@ -21,7 +21,7 @@ var str = "nguyen hieu f8";
 // 7 includes(subStr) tìm chuỗi nhưng trả về True và False
 // console.log(str.includes("F8"));
 
-// 8 slice(strart, end) cắt chuỗi nhưng từ start đến end
+// 8 slice(start, end) cắt chuỗi nhưng từ start đến end
 // console.log(str.slice(3, 8));
 
 // console.log(str.slice(-5));
@@ -49,7 +49,7 @@ var str = "nguyen hieu f8";
 
 // mảng
 
-console.log(Array.prototype);
+// console.log(Array.prototype);
 
 var users = ["An", "Anh", "Dũng ", "Dương"];
 console.log(users);
@@ -167,3 +167,27 @@ trả về false nếu ít nhất 1 phần tử trả về false
 //   }
 // });
 // console.log(result);
+// 21 findlast()
+// Trả về 1 phần của mảng
+// Thỏa mãn điều kiện phần tử cuối return true
+
+// 22 findIndex()
+// Tìm vị trí index đầu tiên thỏa mãn điều kiện return true
+
+// 23 findLastIndex()
+// Tìm vị trí index cuối cùng thỏa mẫn điều kiện return true
+/*
+Hàm reduce()
+
+reduce(callback, initialValue)
+
+callback: Nhận 3 tham số 
++ prevValue => Giá trị của lần lặp trước (nếu return)
++ curentValue => Giá trị của lần lập hiện tại 
++ index => Index của lần lập hiện tại
+
+
+- initialValue => giá trị khởi tạo của prevValue
+
+Giá trị của hàm reduce sẽ là lần return cuối cùng
+*/
