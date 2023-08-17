@@ -183,7 +183,7 @@ reduce(callback, initialValue)
 
 callback: Nhận 3 tham số 
 + prevValue => Giá trị của lần lặp trước (nếu return)
-+ curentValue => Giá trị của lần lập hiện tại 
++ currentValue => Giá trị của lần lập hiện tại 
 + index => Index của lần lập hiện tại
 
 
