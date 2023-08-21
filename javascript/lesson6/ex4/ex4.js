@@ -35,20 +35,24 @@ var posts = [
   },
 ];
 var html = `<div class="posts">
-  ${posts
-    .map(function (post, index) {
-      return `<div class="post-item">
-  <img src="${post.thumbnail}" 
-  alt="${post.title}"
-  class="${index % 2 !== 0 ? "right" : ""}"/>
-  <div class="text">
-    <h3>${post.title}</h3>
-    <p>
-    ${post.excerpt}
-    </p>
+  ${
+    posts?.length
+      ? posts
+          .map?.(function (post, index) {
+            return `<div class="post-item ${index % 2 !== 0 ? "right" : ""}">
+                  <img src="${post.thumbnail}" 
+                  alt="${post.title}"/>
+                  <div class="text">
+                    <h3>${post.title}</h3>
+                    <p>
+                    ${post.excerpt}
+                    </p>
+                  </div>
+                </div>`;
+          })
+          .join("")
+      : "Không có gì!"
+  }
   </div>
-</div>`;
-    })
-    .join("")}
-  </div>`;
+  `;
 document.write(html);
