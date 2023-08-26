@@ -1,0 +1,72 @@
+body {
+  font-family: Poppins, sans-serif;
+  background: #8758ff;
+  display: flex;
+  justify-content: center;
+}
+.from-wrapper {
+  background: #1a1a40;
+  border-radius: 5px;
+  margin-top: 5rem;
+  padding: 2rem;
+}
+.form-app {
+  text-align: center;
+}
+.form {
+  margin: 10px auto;
+}
+.heading {
+  color: #fff;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+}
+.form-check {
+  width: 100%;
+}
+.form-input {
+  background: none;
+  border: 1px solid #8758ff;
+  color: #fff;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  outline: none;
+  padding: 0.5rem 1rem;
+  font-family: Poppins, sans-serif;
+  width: 300px;
+}
+.form-btn {
+  background: #8758ff;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  margin-left: -4px;
+  padding: 0.55rem;
+  font-family: Poppins, sans-serif;
+}
+.show {
+  background: #8758ff;
+  color: #fff;
+  cursor: pointer;
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 0rem 1rem;
+}
+.show-text {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.btn {
+  border: none;
+  background: #8758ff;
+  color: #fff;
+}
