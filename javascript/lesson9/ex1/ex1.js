@@ -1,7 +1,9 @@
 var wrapper = document.querySelector(".from-wrapper ");
 var input = wrapper.querySelector(".form-input");
 var btn = wrapper.querySelector(".form-btn");
-var show = document.querySelector(".show");
+var show = document.querySelector(".show-group");
+
+console.log(show);
 
 input.addEventListener("keydown", function (e) {
   if (e.key === "Enter") {
