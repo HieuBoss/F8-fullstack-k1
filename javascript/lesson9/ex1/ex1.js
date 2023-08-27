@@ -1,27 +1,31 @@
 var wrapper = document.querySelector(".from-wrapper ");
 var input = wrapper.querySelector(".form-input");
-var show = document.querySelector(".show-text");
+var btn = wrapper.querySelector(".form-btn");
+var show = document.querySelector(".show");
+
 console.log(show);
 
 showList = [];
-wrapper.addEventListener("submit", function (e) {
-  e.preventDefault();
-  if (!input.value.trim()) return false;
-  if (e.type === "submit") {
-    showList.push(input.value);
-    console.log(showList);
+input.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    btn.click();
   }
-  renderList();
-  input.value = "";
+});
+wrapper.addEventListener("click", function (e) {
+  e.preventDefault();
+  var showText = input.value.trim();
+  if (showText !== "") {
+    renderList("add", showText);
+    input.value = "";
+  }
 });
 
-function renderList() {
-  var renderHtml = "";
-
-  showList.map(function (post) {
-    renderHtml += `
+function renderList(action, valueText) {
+  if (action === "add") {
+    var renderHtml = `
       <div class="show">
-        <p class="show-text">${post}</p>
+        <p class="show-text">${valueText}</p>
         <div class="show-icon">
           <button class="btn btn-edit">
             <i class="fa-solid fa-pen-to-square"></i>
@@ -31,7 +35,29 @@ function renderList() {
           </button>
         </div>
       </div>`;
-  });
+    show.innerHTML += renderHtml;
 
-  renderHtml = show.innerHTML;
+    var removes = document.querySelectorAll(".show .btn-remove");
+    removes.forEach(function (remove) {
+      remove.addEventListener("click", function () {
+        renderList("remove", this);
+      });
+    });
+
+    var edits = document.querySelectorAll(".show .btn-edit");
+    edits.forEach(function (edit) {
+      edit.addEventListener("click", function () {
+        manageTodoItem("edit", this);
+      });
+    });
+  } else if (action === "remove") {
+    var showItem = valueText.closest(".show");
+    if (showItem) {
+      showItem.remove();
+    }
+  } else if (action === "edit") {
+    var showItem = valueText.closest(".show");
+    if (showItem) {
+    }
+  }
 }

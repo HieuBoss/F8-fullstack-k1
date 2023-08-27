@@ -3,9 +3,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ex2</title>
+    <link rel="stylesheet" href="./css/ex2.css" />
   </head>
   <body>
-    <div class="content" data-count="1">F8</div>
+    <a href="#" class="open-login">Đăng nhập</a>
+    <div class="modal-auth">
+      <div class="modal-dialog">
+        <nav class="tab-nav">
+          <ul>
+            <li><a href="#login" class="active">Đăng nhập</a></li>
+            <li><a href="#register">Đăng ký</a></li>
+          </ul>
+        </nav>
+        <!-- End tab-nav -->
+        <div class="tab-content">
+          <div class="tab-panel active" id="login">
+            <form action="">
+              <div class="form-group">
+                <label for="">Email</label>
+                <input
+                  type="text"
+                  class="field-item email"
+                  placeholder="Email..."
+                />
+              </div>
+              <div class="form-group">
+                <label for="">Mật khẩu</label>
+                <input
+                  type="password"
+                  class="field-item password"
+                  placeholder="password..."
+                />
+              </div>
+
+              <button type="submit">Đăng nhập</button>
+            </form>
+          </div>
+          <div class="tab-panel" id="register">Register</div>
+        </div>
+      </div>
+      <div class="overlay"></div>
+      <!--End overlay  -->
+    </div>
     <script src="./ex2.js"></script>
   </body>
 </html>
