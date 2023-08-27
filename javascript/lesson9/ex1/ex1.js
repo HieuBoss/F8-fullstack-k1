@@ -3,28 +3,26 @@ var input = wrapper.querySelector(".form-input");
 var btn = wrapper.querySelector(".form-btn");
 var show = document.querySelector(".show-group");
 
-console.log(show);
-
-input.addEventListener("keydown", function (e) {
-  if (e.key === "Enter") {
-    e.preventDefault();
-    btn.click();
-  }
-});
-wrapper.addEventListener("click", function (e) {
+showList = [];
+wrapper.addEventListener("submit", function (e) {
   e.preventDefault();
-  var showText = input.value.trim();
-  if (showText !== "") {
-    renderList("add", showText);
-    input.value = "";
+  const trimmedValue = input.value.trim();
+  if (!trimmedValue) return false;
+  if (e.type === "submit") {
+    showList.push(trimmedValue);
   }
+
+  renderList();
+  input.value = "";
+  console.log(showList);
 });
 
-function renderList(action, valueText) {
-  if (action === "add") {
-    var renderHtml = `
+function renderList() {
+  var renderHtml = "";
+  showList.forEach(function (post, index) {
+    renderHtml += `
       <div class="show">
-        <p class="show-text">${valueText}</p>
+        <p class="show-text">${post}</p>
         <div class="show-icon">
           <button class="btn btn-edit">
             <i class="fa-solid fa-pen-to-square"></i>
@@ -34,29 +32,7 @@ function renderList(action, valueText) {
           </button>
         </div>
       </div>`;
-    show.innerHTML += renderHtml;
+  });
 
-    var removes = document.querySelectorAll(".show .btn-remove");
-    removes.forEach(function (remove) {
-      remove.addEventListener("click", function () {
-        renderList("remove", this);
-      });
-    });
-
-    var edits = document.querySelectorAll(".show .btn-edit");
-    edits.forEach(function (edit) {
-      edit.addEventListener("click", function () {
-        manageTodoItem("edit", this);
-      });
-    });
-  } else if (action === "remove") {
-    var showItem = valueText.closest(".show");
-    if (showItem) {
-      showItem.remove();
-    }
-  } else if (action === "edit") {
-    var showItem = valueText.closest(".show");
-    if (showItem) {
-    }
-  }
+  show.innerHTML = renderHtml;
 }
