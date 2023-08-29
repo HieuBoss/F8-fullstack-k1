@@ -23,9 +23,13 @@ body {
   font-family: Poppins, sans-serif;
   font-weight: 600;
 }
+
+.form-edit,
 .form-check {
   width: 100%;
 }
+
+.edit,
 .form-input {
   background: none;
   border: 1px solid #8758ff;
@@ -80,4 +84,8 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 10px;
+}
+
+.d-none {
+  display: none;
 }

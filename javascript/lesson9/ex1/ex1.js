@@ -6,15 +6,14 @@ var show = document.querySelector(".show-group");
 showList = [];
 wrapper.addEventListener("submit", function (e) {
   e.preventDefault();
-  const trimmedValue = input.value.trim();
-  if (!trimmedValue) return false;
+  if (!input.value.trim()) return false;
   if (e.type === "submit") {
-    showList.push(trimmedValue);
+    showList.push(input.value.trim());
   }
 
   renderList();
   input.value = "";
-  console.log(showList);
+  // console.log(showList);
 });
 
 function renderList() {
@@ -24,15 +23,63 @@ function renderList() {
       <div class="show">
         <p class="show-text">${post}</p>
         <div class="show-icon">
-          <button class="btn btn-edit">
+          <button class="btn btn-edit" onclick="startEdit(${index})">
             <i class="fa-solid fa-pen-to-square"></i>
           </button>
-          <button class="btn btn-remove">
+          <button class="btn btn-remove" onclick="removeTask(${index})">
             <i class="fa-solid fa-trash"></i>
           </button>
         </div>
-      </div>`;
+      </div>
+      <form class="form-edit d-none" onsubmit="endEdit(${index})">
+            <input
+              type="text"
+              class="edit"
+              placeholder="Edit Task"
+            />
+            <button type="submit" class="form-btn">Add Task</button>
+          </form>
+      `;
   });
 
   show.innerHTML = renderHtml;
+}
+
+function startEdit(index) {
+  // console.log(index);
+  var showElement = document.querySelectorAll(".show")[index];
+  var formElement = document.querySelectorAll(".form-edit")[index];
+  var valueInput = document.querySelectorAll(".edit")[index];
+  // console.log(showElement);
+  showElement.classList.add("d-none");
+  formElement.classList.remove("d-none");
+  // console.log(showList);
+  valueInput.value = showList[index];
+}
+
+function endEdit(index) {
+  var valueInput = document.querySelectorAll(".edit")[index];
+  var showElement = document.querySelectorAll(".show")[index];
+
+  var showText = document.querySelectorAll(".show-text")[index];
+  var formElement = document.querySelectorAll(".form-edit")[index];
+
+  // console.log(valueInput);
+  // console.log(valueInput.value);
+  if (valueInput.value) {
+    showText.innerText = valueInput.value;
+    showElement.classList.remove("d-none");
+    formElement.classList.add("d-none");
+    showList[index] = valueInput.value;
+  } else {
+    showElement.classList.add("d-none");
+    formElement.classList.add("d-none");
+    showList.splice(index, 1);
+  }
+}
+
+function removeTask(index) {
+  var showElement = document.querySelectorAll(".show")[index];
+  showElement.classList.add("d-none");
+  showList.splice(index, 1);
 }
