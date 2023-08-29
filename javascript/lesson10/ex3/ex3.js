@@ -32,9 +32,6 @@ if (carouselItems.length) {
       carouselInner.style.translate = `${position}px`;
     }
     var nextElement = formActive.nextElementSibling;
-    if (nextElement === null) {
-      nextElement = document.querySelector(".form-input span");
-    }
     nextElement.classList.add("active");
     formActive.classList.remove("active");
     formActive = nextElement;
@@ -46,9 +43,6 @@ if (carouselItems.length) {
       carouselInner.style.translate = `${position}px`;
     }
     var prevElement = formActive.previousElementSibling;
-    if (prevElement === null) {
-      prevElement = document.querySelector(".products h2:last-child");
-    }
     prevElement.classList.add("active");
     formActive.classList.remove("active");
     formActive = prevElement;
