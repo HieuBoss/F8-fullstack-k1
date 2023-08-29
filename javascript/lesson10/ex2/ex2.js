@@ -7,7 +7,7 @@
 var productActive = document.querySelector(".products .active");
 
 console.log(productActive);
-console.log(productActive.previousElementSibling);
+// console.log(productActive.previousElementSibling);
 
 var btnNext = document.querySelector(".next");
 var btnPrev = document.querySelector(".prev");
