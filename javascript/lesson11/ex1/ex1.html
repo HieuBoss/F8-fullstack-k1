@@ -16,37 +16,38 @@
         <h4 class="play">Play Now</h4>
         <h2 class="name">Giàu Vì Bạn Sang Vì Vợ</h2>
         <p class="author">MCK</p>
-      </div>
-      <!-- End head -->
-      <!-- CD -->
-      <div class="cd">
-        <div class="cd-thumb">
-          <img src="./img/img2.jpg" />
+
+        <!-- CD -->
+        <div class="cd">
+          <div class="cd-thumb">
+            <img src="./img/img2.jpg" />
+          </div>
         </div>
         <!-- End cd -->
-        <!-- Main -->
+        <audio src="./music/song2.mp3" controls class="audio"></audio>
       </div>
+      <!-- End head -->
+      <!-- Main -->
       <div class="main">
         <div class="buttons">
-          <div class="prev-track" onclick="prevTrack()">
+          <div class="prev-list" onclick="prevList()">
             <i class="fa fa-step-backward fa-2x"></i>
           </div>
           <div class="play-btn"><i class="fa-solid fa-play"></i></div>
-          <div class="next-track" onclick="nextTrack()">
+          <div class="next-list" onclick="nextList()">
             <i class="fa fa-step-forward fa-2x"></i>
           </div>
         </div>
         <div class="player">
           <span class="start-time">00:00</span>
           <div class="progress-bar">
+            <span class="set-time"></span>
             <div class="progress"><span></span></div>
           </div>
           <span class="end-time">00:00</span>
         </div>
       </div>
       <!-- End main -->
-
-      <audio src="./music/song2.mp3" controls class="audio"></audio>
     </div>
 
     <script src="./ex1.js"></script>

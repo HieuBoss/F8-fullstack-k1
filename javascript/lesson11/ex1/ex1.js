@@ -1,55 +1,16 @@
-var songs = [
-  {
-    name: "Cứ Chill Thôi",
-    singer: "ft. Suni Hạ Linh & Rhymastic",
-    link: "./music/song1.mp3",
-    image: "./img/img1.jpg",
-  },
-  {
-    name: "Giàu Vì Bạn Sang Vì Vợ",
-    singer: "MCK",
-    link: "./music/song2.mp3",
-    image: "./img/img2.jpg",
-  },
-  {
-    name: "Người Chơi Hệ Đẹp",
-    singer: "Cukak Remix",
-    link: "./music/song3.mp3",
-    image: "./img/img3.jpg",
-  },
-  {
-    name: "Xích Thêm Chút",
-    singer: "RPT Groovie X Tlinh X RPT MCK",
-    link: "./music/song4.mp3",
-    image: "./img/img4.jpg",
-  },
-  {
-    name: "SIMPLE LOVE",
-    singer: "Obito x Seachains x Davis x Lena",
-    link: "./music/song5.mp3",
-    image: "./img/img5.jpg",
-  },
-  {
-    name: "OK",
-    singer: "BINZ",
-    link: "./music/song6.mp3",
-    image: "./img/img6.jpg",
-  },
-  {
-    name: "THEY SAID",
-    singer: "TOULIVER X BINZ",
-    link: "./music/song7.mp3",
-    image: "./img/img7.jpg",
-  },
-];
-
 var progressBar = document.querySelector(".progress-bar");
 
 var progress = progressBar.querySelector(".progress");
 
 var progressDot = progress.querySelector("span");
 // console.log(progressDot);
-
+var audio = document.querySelector(".audio");
+var currentTimeEl = progressBar.previousElementSibling;
+var durationTimeEl = progressBar.nextElementSibling;
+var playBtn = document.querySelector(".play-btn");
+var setTime = progressBar.querySelector(".set-time");
+var playIcon = `<i class="fa-solid fa-play"></i>`;
+var pauseIcon = `<i class="fa-solid fa-pause"></i>`;
 var progressBarWidth = progressBar.clientWidth;
 
 var isDrag = false;
@@ -112,6 +73,20 @@ document.addEventListener("mouseup", function () {
     audio.currentTime = newTime;
   }
 });
+progressBar.addEventListener("mousemove", function (e) {
+  var mouseX = e.clientX - progressBar.getBoundingClientRect().left;
+  var Time = (mouseX / progressBarWidth) * audio.duration;
+  setTime.textContent = getTime(Time);
+  setTime.style.left = `${mouseX}px`;
+});
+
+progressBar.addEventListener("mouseout", function () {
+  setTime.style.display = "none";
+});
+
+progressBar.addEventListener("mouseover", function () {
+  setTime.style.display = "block";
+});
 
 /*
 Khi bấm chuột xuống vào chấm màu tím
@@ -121,14 +96,6 @@ Khi kéo chuột
 - Lấy được clientX ở vị trí gần nhất (kéo đến đâu lấy vị trí ở đó)
 - Tính khoảng cách kéo: clientX mới nhất - clientX ban đầu khi click
 */
-
-var audio = document.querySelector(".audio");
-var currentTimeEl = progressBar.previousElementSibling;
-var durationTimeEl = progressBar.nextElementSibling;
-var playBtn = document.querySelector(".play-btn");
-
-var playIcon = `<i class="fa-solid fa-play"></i>`;
-var pauseIcon = `<i class="fa-solid fa-pause"></i>`;
 
 var getTime = function (seconds) {
   var mins = Math.floor(seconds / 60);

@@ -90,3 +90,10 @@ body {
 .audio {
   display: none;
 }
+.progress-bar:hover .set-time {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.39);
+  margin-top: -25px;
+  font-size: 0.7rem;
+  padding: 3px;
+}
