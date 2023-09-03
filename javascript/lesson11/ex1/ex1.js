@@ -109,7 +109,7 @@ document.addEventListener("mouseup", function () {
     isDrag = false;
     initialRate = rate;
     var newTime = (audio.duration * rate) / 100;
-    audio.currentTime = newTime; // Đặt thời gian của bài hát tới vị trí mới
+    audio.currentTime = newTime;
   }
 });
 
