@@ -18,7 +18,7 @@ img {
 .carousel .carousel-inner {
   display: flex;
   /* width: 5760px; */
-  transition: translate 0.4s ease;
+  transition: transform 0.4s ease;
 }
 
 .carousel .carousel-inner .item {

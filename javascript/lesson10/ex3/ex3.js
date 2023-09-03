@@ -29,10 +29,12 @@ if (carouselItems.length) {
 }
 
 navNext.addEventListener("click", function () {
+  console.log(position);
   if (Math.abs(position) < totalWidth - itemWidth) {
     position -= itemWidth;
     carouselInner.style.transform = `translateX(${position}px)`;
     updateFormSpan(spanIndex + 1);
+    // console.log(spanIndex);
   }
 });
 
@@ -41,6 +43,7 @@ navPrev.addEventListener("click", function () {
     position += itemWidth;
     carouselInner.style.transform = `translateX(${position}px)`;
     updateFormSpan(spanIndex - 1);
+    // console.log(spanIndex);
   }
 });
 
@@ -49,6 +52,8 @@ function handle(span, index) {
     var newPosition = -index * itemWidth;
     carouselInner.style.transform = `translateX(${newPosition}px)`;
     updateFormSpan(index);
+    position = newPosition;
+    // console.log(index);
   });
 }
 
