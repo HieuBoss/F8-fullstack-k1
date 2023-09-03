@@ -75,8 +75,8 @@ document.addEventListener("mouseup", function () {
 });
 progressBar.addEventListener("mousemove", function (e) {
   var mouseX = e.clientX - progressBar.getBoundingClientRect().left;
-  var Time = (mouseX / progressBarWidth) * audio.duration;
-  setTime.textContent = getTime(Time);
+  var time = (mouseX / progressBarWidth) * audio.duration;
+  setTime.textContent = getTime(time);
   setTime.style.left = `${mouseX}px`;
 });
 
