@@ -48,8 +48,6 @@ var progressBar = document.querySelector(".progress-bar");
 var progress = progressBar.querySelector(".progress");
 
 var progressDot = progress.querySelector("span");
-var startTime = document.querySelector(".start-time");
-var endTime = document.querySelector(".start-time");
 // console.log(progressDot);
 
 var progressBarWidth = progressBar.clientWidth;
@@ -111,7 +109,7 @@ document.addEventListener("mouseup", function () {
     isDrag = false;
     initialRate = rate;
     var newTime = (audio.duration * rate) / 100;
-    audio.currentTime = newTime;
+    audio.currentTime = newTime; // Đặt thời gian của bài hát tới vị trí mới
   }
 });
 
