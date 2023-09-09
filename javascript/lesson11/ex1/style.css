@@ -90,6 +90,7 @@ body {
 .audio {
   display: none;
 }
+
 .progress-bar:hover .set-time {
   position: absolute;
   background: rgba(0, 0, 0, 0.39);

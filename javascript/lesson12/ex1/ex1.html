@@ -1,0 +1,60 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giỏ hàng</title>
+    <style>
+      h3,
+      table {
+        margin: 40px auto;
+        text-align: center;
+      }
+      button {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="product">
+      <h3>DANH SÁCH SẢN PHẨM</h3>
+      <table
+        border="1"
+        width="90%"
+        cellpadding="0"
+        cellspacing="0"
+        class="table-add"
+      >
+        <thead>
+          <tr>
+            <th width="5%">STT</th>
+            <th>Tên sản phẩm</th>
+            <th width="10%">Giá</th>
+            <th width="10%">Thêm vào giỏ</th>
+          </tr>
+        </thead>
+        <tbody class="show-list"></tbody>
+      </table>
+
+      <h3>GIỎ HÀNG</h3>
+      <table
+        border="1"
+        width="90%"
+        cellpadding="0"
+        cellspacing="0"
+        class="table-add"
+      >
+        <tr>
+          <th width="5%">STT</th>
+          <th>Tên sản phẩm</th>
+          <th width="10%">Giá</th>
+          <th width="10%">Số lượng</th>
+          <th width="10%">Thành tiền</th>
+          <th width="5%">Xóa</th>
+        </tr>
+        <tbody class="show-list-cart"></tbody>
+      </table>
+    </main>
+
+    <script src="./ex1.js"></script>
+  </body>
+</html>

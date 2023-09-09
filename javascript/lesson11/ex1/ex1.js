@@ -58,10 +58,11 @@ document.addEventListener("mousemove", function (e) {
     var space = e.clientX - initialClientX;
     // console.log(space);
     rate = (space * 100) / progressBarWidth + initialRate;
-    if (rate >= 0 && rate <= 100) {
-      progress.style.width = `${rate}%`;
-      handleChange(rate);
-    }
+
+    // if (rate >= 0 && rate <= 100) {
+    progress.style.width = `${rate}%`;
+    handleChange(rate);
+    // }
   }
 });
 
@@ -87,7 +88,12 @@ progressBar.addEventListener("mouseout", function () {
 progressBar.addEventListener("mouseover", function () {
   setTime.style.display = "block";
 });
-
+audio.addEventListener("ended", function () {
+  playBtn.innerHTML = playIcon;
+  initialClientX = 0;
+  initialRate = 0;
+  rate = 0;
+});
 /*
 Khi bấm chuột xuống vào chấm màu tím
 - Lấy được clientX tại ví trí bấm chuột
