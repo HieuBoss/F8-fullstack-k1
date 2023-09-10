@@ -19,7 +19,9 @@ var products = [
     price: 4000,
   },
 ];
+
 var cart = JSON.parse(localStorage.getItem("cart")) || [];
+var updatedCart = [];
 function renderProductList() {
   var showList = document.querySelector(".show-list");
   products.forEach(function (product, index) {
@@ -53,6 +55,7 @@ renderProductList();
 function addCart(quantity, name, price, index, total) {
   tableCart.style.display = "block";
   warning.style.display = "none";
+
   var existingProduct = cart.find(function (product) {
     return product.index === index;
   });
@@ -72,7 +75,7 @@ function addCart(quantity, name, price, index, total) {
       total: total,
     });
   }
-  console.log(total);
+  // console.log(total);
   localStorage.setItem("cart", JSON.stringify(cart));
   renderListCart();
 }
@@ -80,15 +83,21 @@ function addCart(quantity, name, price, index, total) {
 function renderListCart() {
   var showListCart = document.querySelector(".show-list-cart");
   showListCart.innerHTML = "";
+  if (cart.length === 0) {
+    warning.style.display = "block";
+    tableCart.style.display = "none";
+  } else {
+    warning.style.display = "none";
+  }
   cart.forEach(function (product, index) {
     var productItem = document.createElement("tr");
     var html = `
       <td>${index + 1}</td>
-      <td>${product.name}</td>
+      <td>${product.name}</td> 
+      <td>${product.price}</td>
       <td> <input type="number" value="${
         product.quantity
       }" class="quantity"/></td>
-      <td>${product.price}</td>
       <td>${product.total}</td>
       <td>
         <button class="remove-cart" button-index="${index}" type="submit">Xóa</button>
@@ -97,5 +106,35 @@ function renderListCart() {
 
     productItem.innerHTML = html;
     showListCart.appendChild(productItem);
+
+    btnRemove = productItem.querySelector("button.remove-cart[button-index]");
+    btnRemove.addEventListener("click", function (e) {
+      // productItem.remove();
+      var check = confirm("Bạn có chắc muốn xóa không");
+      if (check) {
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        renderListCart();
+      } else {
+        alert("Không xóa nữa");
+      }
+    });
   });
+  var totalQuantity = cart.reduce(function (sum, product) {
+    // console.log(product);
+    return sum + product.quantity;
+  }, 0);
+
+  var totalPrice = cart.reduce(function (sum, product) {
+    return sum + product.total;
+  }, 0);
+
+  var totalRow = document.createElement("tr");
+  totalRow.innerHTML = `
+    <td colspan="3">Tổng:</td>
+    <td>${totalQuantity}</td>
+    <td>${totalPrice}</td>
+    <td></td>
+  `;
+  showListCart.appendChild(totalRow);
 }
