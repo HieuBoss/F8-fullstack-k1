@@ -96,7 +96,7 @@ function renderListCart() {
       <td>${product.price}</td>
       <td> <input type="number" value="${
         product.quantity
-      }" class="quantity"/></td>
+      }" class="quantity-list"/></td>
       <td>${product.total}</td>
       <td>
         <button class="remove-cart" data-index="${index}" type="submit">Xóa</button>
@@ -158,10 +158,22 @@ function renderListCart() {
   var btnUpdateAll = document.querySelector(".update-all");
   if (btnUpdateAll) {
     btnUpdateAll.addEventListener("click", function () {
-      // Đặt hành động cập nhật giỏ hàng ở đây
+      var inputQuantities = document.querySelectorAll(".quantity-list");
+
+      inputQuantities.forEach(function (input, index) {
+        var newQuantity = parseInt(input.value);
+        var product = cart[index];
+        if (newQuantity >= 0) {
+          product.quantity = newQuantity;
+          product.total = newQuantity * product.price;
+        } else {
+          alert("Số lượng không hợp lệ. Vui lòng nhập số lượng dương.");
+        }
+      });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderListCart();
     });
   }
-
   var btnDeleteAll = document.querySelector(".delete-all");
   if (btnDeleteAll) {
     btnDeleteAll.addEventListener("click", function () {
@@ -170,6 +182,7 @@ function renderListCart() {
         cart = [];
         localStorage.setItem("cart", JSON.stringify(cart));
         renderListCart();
+        alert("Xóa thành công");
       }
     });
   }
