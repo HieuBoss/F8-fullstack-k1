@@ -27,14 +27,14 @@ function renderProductList() {
   products.forEach(function (product, index) {
     var productItem = document.createElement("tr");
     var html = `
-      <td>${index + 1}</td>
-      <td>${product.name}</td>
-      <td>${product.price}</td>
-      <td> 
-        <input type="number" value="1" class="quantity"/>
-        <button class="add-cart" data-index="${index}" type="submit">Thêm vào giỏ</button>
-      </td>
-    `;
+        <td>${index + 1}</td>
+        <td>${product.name}</td>
+        <td>${product.price}</td>
+        <td> 
+          <input type="number" value="1" class="quantity"/>
+          <button class="add-cart" data-index="${index}" type="submit">Thêm vào giỏ</button>
+        </td>
+      `;
     productItem.innerHTML = html;
     showList.appendChild(productItem);
 
@@ -91,17 +91,17 @@ function renderListCart() {
   cart.forEach(function (product, index) {
     var productItem = document.createElement("tr");
     var html = `
-      <td>${index + 1}</td>
-      <td>${product.name}</td> 
-      <td>${product.price}</td>
-      <td> <input type="number" value="${
-        product.quantity
-      }" class="quantity-list"/></td>
-      <td>${product.total}</td>
-      <td>
-        <button class="remove-cart" data-index="${index}" type="submit">Xóa</button>
-      </td>
-    `;
+        <td>${index + 1}</td>
+        <td>${product.name}</td> 
+        <td>${product.price}</td>
+        <td> <input type="number" value="${
+          product.quantity
+        }" class="quantity-list"/></td>
+        <td>${product.total}</td>
+        <td>
+          <button class="remove-cart" data-index="${index}" type="submit">Xóa</button>
+        </td>
+      `;
 
     productItem.innerHTML = html;
     showListCart.appendChild(productItem);
@@ -131,11 +131,11 @@ function renderListCart() {
 
     var totalRow = document.createElement("tr");
     totalRow.innerHTML = `
-      <td colspan="3">Tổng:</td>
-      <td>${totalQuantity}</td>
-      <td>${totalPrice}</td>
-      <td></td>
-    `;
+        <td colspan="3">Tổng:</td>
+        <td>${totalQuantity}</td>
+        <td>${totalPrice}</td>
+        <td></td>
+      `;
     showListCart.appendChild(totalRow);
 
     var buttonRow = document.querySelector(".btn-footer");
@@ -143,9 +143,9 @@ function renderListCart() {
       buttonRow = document.createElement("div");
       buttonRow.classList.add("btn-footer");
       buttonRow.innerHTML = `
-        <button class="update-all">Cập nhật giỏ hàng</button>
-        <button class="delete-all">Xóa giỏ hàng</button>
-      `;
+          <button class="update-all">Cập nhật giỏ hàng</button>
+          <button class="delete-all">Xóa giỏ hàng</button>
+        `;
       tableCart.appendChild(buttonRow);
     }
   } else {
@@ -174,16 +174,18 @@ function renderListCart() {
       renderListCart();
     });
   }
+
   var btnDeleteAll = document.querySelector(".delete-all");
+  console.log(btnDeleteAll);
   if (btnDeleteAll) {
-    btnDeleteAll.addEventListener("click", function () {
-      var check = confirm("Bạn có chắc muốn xóa giỏ hàng không?");
-      if (check) {
-        cart = [];
-        localStorage.setItem("cart", JSON.stringify(cart));
-        renderListCart();
-        alert("Xóa thành công");
-      }
-    });
+    btnDeleteAll.addEventListener("click", deleteAllCart);
+  }
+}
+
+function deleteAllCart() {
+  if (confirm("Bạn có chắc muốn xóa giỏ hàng không?")) {
+    cart = [];
+    localStorage.removeItem("cart");
+    renderListCart();
   }
 }
