@@ -21,7 +21,7 @@ var products = [
 ];
 
 var cart = JSON.parse(localStorage.getItem("cart")) || [];
-var updatedCart = [];
+
 function renderProductList() {
   var showList = document.querySelector(".show-list");
   products.forEach(function (product, index) {
@@ -32,18 +32,18 @@ function renderProductList() {
       <td>${product.price}</td>
       <td> 
         <input type="number" value="1" class="quantity"/>
-        <button class="add-cart" button-index="${index}" type="submit">Thêm vào giỏ</button>
+        <button class="add-cart" data-index="${index}" type="submit">Thêm vào giỏ</button>
       </td>
     `;
     productItem.innerHTML = html;
     showList.appendChild(productItem);
 
-    var btnProduct = productItem.querySelector("button.add-cart[button-index]");
+    var btnProduct = productItem.querySelector("button.add-cart");
     btnProduct.addEventListener("click", function (e) {
       var quantity = parseInt(productItem.querySelector(".quantity").value);
       var name = product.name;
       var price = parseInt(product.price);
-      var index = parseInt(btnProduct.getAttribute("button-index"));
+      var index = parseInt(btnProduct.getAttribute("data-index"));
       var total = quantity * price;
       addCart(quantity, name, price, index, total);
     });
@@ -75,7 +75,6 @@ function addCart(quantity, name, price, index, total) {
       total: total,
     });
   }
-  // console.log(total);
   localStorage.setItem("cart", JSON.stringify(cart));
   renderListCart();
 }
@@ -100,18 +99,18 @@ function renderListCart() {
       }" class="quantity"/></td>
       <td>${product.total}</td>
       <td>
-        <button class="remove-cart" button-index="${index}" type="submit">Xóa</button>
+        <button class="remove-cart" data-index="${index}" type="submit">Xóa</button>
       </td>
     `;
 
     productItem.innerHTML = html;
     showListCart.appendChild(productItem);
 
-    btnRemove = productItem.querySelector("button.remove-cart[button-index]");
+    var btnRemove = productItem.querySelector("button.remove-cart");
     btnRemove.addEventListener("click", function (e) {
-      // productItem.remove();
       var check = confirm("Bạn có chắc muốn xóa không");
       if (check) {
+        var index = parseInt(btnRemove.getAttribute("data-index"));
         cart.splice(index, 1);
         localStorage.setItem("cart", JSON.stringify(cart));
         renderListCart();
@@ -120,21 +119,58 @@ function renderListCart() {
       }
     });
   });
-  var totalQuantity = cart.reduce(function (sum, product) {
-    // console.log(product);
-    return sum + product.quantity;
-  }, 0);
 
-  var totalPrice = cart.reduce(function (sum, product) {
-    return sum + product.total;
-  }, 0);
+  if (cart.length > 0) {
+    var totalQuantity = cart.reduce(function (sum, product) {
+      return sum + product.quantity;
+    }, 0);
 
-  var totalRow = document.createElement("tr");
-  totalRow.innerHTML = `
-    <td colspan="3">Tổng:</td>
-    <td>${totalQuantity}</td>
-    <td>${totalPrice}</td>
-    <td></td>
-  `;
-  showListCart.appendChild(totalRow);
+    var totalPrice = cart.reduce(function (sum, product) {
+      return sum + product.total;
+    }, 0);
+
+    var totalRow = document.createElement("tr");
+    totalRow.innerHTML = `
+      <td colspan="3">Tổng:</td>
+      <td>${totalQuantity}</td>
+      <td>${totalPrice}</td>
+      <td></td>
+    `;
+    showListCart.appendChild(totalRow);
+
+    var buttonRow = document.querySelector(".btn-footer");
+    if (!buttonRow) {
+      buttonRow = document.createElement("div");
+      buttonRow.classList.add("btn-footer");
+      buttonRow.innerHTML = `
+        <button class="update-all">Cập nhật giỏ hàng</button>
+        <button class="delete-all">Xóa giỏ hàng</button>
+      `;
+      tableCart.appendChild(buttonRow);
+    }
+  } else {
+    var buttonRow = document.querySelector(".btn-footer");
+    if (buttonRow) {
+      buttonRow.remove();
+    }
+  }
+
+  var btnUpdateAll = document.querySelector(".update-all");
+  if (btnUpdateAll) {
+    btnUpdateAll.addEventListener("click", function () {
+      // Đặt hành động cập nhật giỏ hàng ở đây
+    });
+  }
+
+  var btnDeleteAll = document.querySelector(".delete-all");
+  if (btnDeleteAll) {
+    btnDeleteAll.addEventListener("click", function () {
+      var check = confirm("Bạn có chắc muốn xóa giỏ hàng không?");
+      if (check) {
+        cart = [];
+        localStorage.setItem("cart", JSON.stringify(cart));
+        renderListCart();
+      }
+    });
+  }
 }

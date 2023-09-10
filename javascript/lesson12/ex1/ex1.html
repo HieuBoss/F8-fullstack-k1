@@ -8,19 +8,25 @@
       table {
         margin: 40px auto;
         text-align: center;
+        color: red;
       }
       button {
         width: 100%;
       }
       th {
-        color: #fff;
-        background-color: rgb(0, 47, 255);
+        background-color: green;
+        color: white;
+      }
+      td {
+        color: red;
+        background-color: rgb(255, 234, 167);
       }
       .add-cart {
         background-color: rgb(39, 194, 0);
         color: #fff;
         border: none;
       }
+      .update-all:hover,
       .add-cart:hover {
         background-color: green;
       }
@@ -28,6 +34,7 @@
         color: #fff;
         background-color: red;
       }
+      .delete-all:hover,
       .remove-cart:hover {
         background-color: rgb(170, 0, 0);
       }
@@ -36,10 +43,28 @@
       }
       .warning {
         text-align: center;
-        color: red;
+        background-color: red;
+        color: #fff;
       }
       input[value] {
         text-align: center;
+      }
+      .btn-footer {
+        display: flex;
+      }
+      .btn-footer button {
+        width: 10%;
+        padding: 10px 0;
+      }
+      .update-all {
+        background-color: rgb(39, 194, 0);
+        color: #fff;
+        border: none;
+      }
+      .delete-all {
+        background-color: red;
+        color: #fff;
+        border: none;
       }
     </style>
   </head>
