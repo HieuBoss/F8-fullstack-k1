@@ -143,7 +143,7 @@ var getAudio = function (lyric) {
     text.innerHTML = html;
   } else {
     text.innerHTML =
-      "Không tìm thấy từ nào phù hợp với thời gian hiện tại của âm thanh.";
+      "Bài hát: NGÀY MAI NGƯỜI TA LẤY CHỒNG <br> Tác giả: THÀNH ĐẠT x ĐÔNG THIÊN ĐỨC";
   }
 };
 

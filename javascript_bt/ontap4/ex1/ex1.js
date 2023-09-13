@@ -9,3 +9,5 @@ product_id: Chứa ID của product
 
 product_quantity: Chứa số lượng của product trong order
 */
+
+function order() {}
