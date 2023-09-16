@@ -1,15 +1,49 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
     <style>
-      table {
-        width: 100%;
+      .draggable {
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+        text-align: center;
+        padding: 10px;
+        margin: 10px;
+        cursor: pointer;
+      }
+
+      .droppable {
+        width: 200px;
+        height: 200px;
+        background-color: lightgreen;
+        text-align: center;
+        padding: 10px;
+        margin: 10px;
       }
     </style>
   </head>
   <body>
-    <script src="./ex2.js"></script>
+    <div
+      class="draggable"
+      draggable="true"
+      ondragstart="event.dataTransfer.setData('text/plain', 'Drag me!')"
+    >
+      Drag me!
+    </div>
+    <div
+      class="droppable"
+      ondragover="event.preventDefault()"
+      ondrop="drop(event)"
+    >
+      Drop here
+    </div>
+
+    <script>
+      function drop(event) {
+        event.preventDefault();
+        const data = event.dataTransfer.getData("text/plain");
+        event.target.textContent = data;
+      }
+    </script>
   </body>
 </html>

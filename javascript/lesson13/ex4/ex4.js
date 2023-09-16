@@ -103,12 +103,16 @@ playBtn.addEventListener("click", function () {
 });
 
 audio.addEventListener("timeupdate", function () {
-  currentTimeEl.innerText = getTime(this.currentTime);
-  var rate = (this.currentTime / this.duration) * 100;
-  progress.style.width = `${rate}%`;
+  if (!isDrag) {
+    currentTimeEl.innerText = getTime(this.currentTime);
+    var rate = (this.currentTime / this.duration) * 100;
+    progress.style.width = `${rate}%`;
+    currentTime = this.currentTime;
 
-  getAudio(lyric);
+    getAudio(lyric);
+  }
 });
+
 var btnOpenKaraoke = document.querySelector(".open-karaoke");
 var karaoke = document.querySelector(".karaoke");
 var btnCloseKaraoke = document.querySelector(".close");
