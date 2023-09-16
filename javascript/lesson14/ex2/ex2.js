@@ -10,6 +10,7 @@ var draggedItem = null;
 function renderItem(listItem) {
   listItem.forEach(function (item, index) {
     item.setAttribute("draggable", true);
+    item.setAttribute("data-index", index);
     var name = "Bài";
     var span = document.createElement("span");
     var itemText = item.innerText;
@@ -27,6 +28,7 @@ function renderItem(listItem) {
 function renderModule(moduleItem) {
   moduleItem.forEach(function (item, index) {
     item.setAttribute("draggable", true);
+    item.setAttribute("data-index", index);
     var name = "Module";
     var span = document.createElement("span");
     var moduleText = item.innerText;
@@ -51,12 +53,41 @@ function handleDragStart(e) {
 }
 
 function handleDragEnd(e) {
+  draggedItem = null;
   e.target.classList.remove("dragging");
 }
 
 list.addEventListener("dragover", function (e) {
   e.preventDefault();
   if (draggedItem) {
-    var test = e.target.closest(".list-item");
+    var targetItem = e.target.closest(".list-item");
+    if (targetItem) {
+      var rect = targetItem.getBoundingClientRect();
+      var mouseY = e.clientY;
+
+      if (mouseY < rect.bottom / 2) {
+        list.insertBefore(draggedItem, targetItem);
+      } else {
+        list.insertBefore(draggedItem, targetItem.nextSibling);
+      }
+    }
   }
+
+  var items = document.querySelectorAll(".list-item:not(.module)");
+  items.forEach(function (item, index) {
+    item.setAttribute("data-index", index);
+    var name = "Bài";
+    var span = item.querySelector("span");
+    item.innerText = name + " " + (index + 1) + ": ";
+    item.appendChild(span);
+  });
+
+  var modules = document.querySelectorAll(".list-item.module");
+  modules.forEach(function (module, index) {
+    module.setAttribute("data-index", index);
+    var name = "Module";
+    var span = module.querySelector("span");
+    module.innerText = name + " " + (index + 1) + ": ";
+    module.appendChild(span);
+  });
 });
