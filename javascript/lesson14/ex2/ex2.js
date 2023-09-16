@@ -1,6 +1,6 @@
 var list = document.querySelector(".list");
-var listItem = document.querySelectorAll(".list .list-item:not(.module)");
-var moduleItem = document.querySelectorAll(".module");
+var listItem = document.querySelectorAll(".list-item:not(.module)");
+var moduleItem = document.querySelectorAll(".list-item.module");
 // console.log(moduleItem);
 // console.log(listItem);
 
