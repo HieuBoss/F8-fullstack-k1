@@ -51,11 +51,14 @@ function getNameFile() {
 }
 
 nameFileInput.addEventListener("input", getNameFile);
-nameFile = getNameFile();
+
 btnNew.addEventListener("click", () => {
+  nameFile = getNameFile();
   text.innerText = "";
 });
 btnTXT.addEventListener("click", () => {
+  nameFile = getNameFile();
+
   var bolb = new Blob([text.innerText], { type: "text / plain " });
   var url = URL.createObjectURL(bolb);
   var link = document.createElement("a");
@@ -64,6 +67,8 @@ btnTXT.addEventListener("click", () => {
   link.click();
 });
 btnPDF.addEventListener("click", () => {
+  nameFile = getNameFile();
+
   var bolb = new Blob([text.innerText], { type: "application/pdf" });
   var url = URL.createObjectURL(bolb);
   var link = document.createElement("a");
