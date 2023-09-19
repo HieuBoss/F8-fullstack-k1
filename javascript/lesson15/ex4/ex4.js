@@ -45,13 +45,8 @@ btnItalics.addEventListener("click", function () {
 btnColor.addEventListener("change", function () {
   document.execCommand("foreColor", false, this.value);
 });
-function getNameFile() {
-  var nameFile = nameFileInput.value;
-  return nameFile;
-}
 
-nameFileInput.addEventListener("input", getNameFile);
-nameFile = getNameFile();
+var nameFile = nameFileInput.value;
 btnNew.addEventListener("click", () => {
   text.innerText = "";
 });
