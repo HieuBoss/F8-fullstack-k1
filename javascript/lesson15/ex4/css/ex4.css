@@ -1,0 +1,94 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+.heading {
+  font-size: 2rem;
+  border-bottom: 1px solid gray;
+  padding: 10px 0;
+}
+.content {
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-between;
+}
+.main-content {
+  display: flex;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(179, 177, 177);
+  display: none;
+  position: absolute;
+  border-radius: 10px;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+}
+.btn-menu {
+  padding: 13px 30px;
+  border: none;
+  background-color: #fff;
+}
+.btn-menu:hover {
+  background-color: rgb(219, 217, 217);
+}
+.btn-primary {
+  position: relative;
+  padding: 10px 20px;
+  margin-right: 10px;
+  background: rgb(0, 153, 255);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+.btn-bold,
+.btn-italics,
+.btn-underlined {
+  background-color: black;
+  color: #fff;
+  padding: 5px 15px;
+  font-size: 1.2rem;
+}
+.btn-properties {
+  display: flex;
+  gap: 5px;
+  text-align: center;
+}
+input#color-input {
+  width: 70px;
+  height: 35px;
+}
+
+#text {
+  outline: none;
+  font-size: 1.2rem;
+  padding: 30px;
+  margin: 20px 0;
+  height: 270px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.quantity {
+  float: right;
+  display: flex;
+  gap: 30px;
+}
+.show {
+  display: flex;
+}
+/*In đậm*/
+.btn-bold b,
+#text b {
+  font-weight: bold;
+}
+
+/* Nghiêng */
+.btn-italics i,
+#text i {
+  font-style: italic;
+}
+
+/* Gạch dưới */
+.btn-underlined u,
+#text u {
+  text-decoration: underline;
+}

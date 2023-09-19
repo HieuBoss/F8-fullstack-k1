@@ -1,193 +1,23 @@
-var database = {
-  lastNames: [
-    "An",
-    "Anh",
-    "Bảo",
-    "Bình",
-    "Cẩm",
-    "Chi",
-    "Chinh",
-    "Diễm",
-    "Dung",
-    "Dương",
-    "Giang",
-    "Hà",
-    "Hải",
-    "Hạnh",
-    "Hiếu",
-    "Hoài",
-    "Hoàng",
-    "Hồng",
-    "Huyền",
-    "Khanh",
-    "Khánh",
-    "Lan",
-    "Linh",
-    "Loan",
-    "Ly",
-    "Mai",
-    "Minh",
-    "Mỹ",
-    "Nga",
-    "Ngân",
-    "Ngọc",
-    "Nhiên",
-    "Phương",
-    "Quỳnh",
-    "Thảo",
-    "Thiên",
-    "Thùy",
-    "Trâm",
-    "Trang",
-    "Tú",
-    "Tuyết",
-    "Uyên",
-    "Vân",
-    "Việt",
-    "Xuân",
-    "Yến",
-  ],
-  midNames: [
-    "Anh",
-    "Bích",
-    "Bình",
-    "Cẩm",
-    "Diệu",
-    "Đức",
-    "Gia",
-    "Hải",
-    "Hoàng",
-    "Hữu",
-    "Khắc",
-    "Kim",
-    "Lâm",
-    "Minh",
-    "Ngọc",
-    "Như",
-    "Phúc",
-    "Quang",
-    "Quốc",
-    "Thái",
-    "Thanh",
-    "Thị",
-    "Thuỷ",
-    "Trung",
-    "Tuấn",
-  ],
-  firstNames: [
-    "Bùi",
-    "Cao",
-    "Chủ",
-    "Đặng",
-    "Đinh",
-    "Đỗ",
-    "Đức",
-    "Dương",
-    "Hoàng",
-    "Huỳnh",
-    "Lê",
-    "Lý",
-    "Mai",
-    "Ngô",
-    "Nguyễn",
-    "Phạm",
-    "Phan",
-    "Trần",
-    "Trịnh",
-    "Võ",
-    "Vũ",
-  ],
-};
+const ul = document.createElement("ul");
+document.body.appendChild(ul);
+ul.innerText = " day la ul";
 
-function removeAccent(str) {
-  return str
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace("đ", "d")
-    .replace("Đ", "D");
-}
-function randomID(fullName) {
-  var word = removeAccent(fullName.replaceAll(" ", ""));
-  var char = word.split("");
-  for (var i = 0; i < char.length; i++) {
-    var j = Math.floor(Math.random() * char.length);
-    var temp = char[i];
-    char[i] = char[j];
-    char[j] = temp;
-  }
-  return char.join("");
-}
-function randomName(name) {
-  return database[name][Math.floor(Math.random() * database[name].length)];
+const li1 = document.createElement("li");
+li1.textContent = "A";
+const li2 = document.createElement("li");
+li2.textContent = "3";
+
+ul.appendChild(li1);
+ul.appendChild(li2);
+
+function hide(evt) {
+  // evt.target refers to the clicked <li> element
+  // This is different than evt.currentTarget, which would refer to the parent <ul> in this context
+  // evt.target.style.visibility = "hidden";
+  // evt.stopPropagation();
+  console.log(evt.target);
 }
 
-var helper = {
-  getID: randomID,
-  getFirstName: () => randomName("firstNames"),
-  getMidName: () => randomName("midNames"),
-  getLastName: () => randomName("lastNames"),
-  getFullName: (first, mid, last) => `${first}${mid}${last}`,
-  getEmail: (fullName) =>
-    removeAccent(fullName.replaceAll(" ", "").toLowerCase()) + "@gmail.com",
-};
-
-var customers = [];
-
-function Customer() {
-  var firstName = helper.getFirstName();
-  var midName = helper.getMidName();
-  var lastName = helper.getLastName();
-  var fullName = helper.getFullName(firstName, midName, lastName);
-  var generateId = () => helper.getID(fullName);
-  var generateEmail = () => helper.getEmail(fullName);
-
-  return {
-    id: generateId(fullName),
-    firstName,
-    midName,
-    lastName,
-    fullName,
-    email: generateEmail(fullName),
-  };
-}
-
-function customerArr(time) {
-  for (var i = 0; i < time; i++) {
-    customers.push(new Customer());
-  }
-  return customers;
-}
-var html = `<table border="1">
-<thead>
-<tr>
-  <th>ID</th>
-  <th>{First Name}</th>
-  <th>Mid Name</th>
-  <th>Last Name</th>
-  <th>Full Name</th>
-  <th>Email</th>
-</tr>
-</thead>
-<tbody>
-${customerArr(20)
-  .map((customer) => {
-    return `<tr>
- ${Object.keys(customer)
-   .map((key) => {
-     return `<td>${customer[key]}</td>`;
-   })
-   .join("")}
- </tr>`;
-  })
-  .join("")}
-</tbody>
-<tfooter>
-<tr>
-<th colspan="5" align="left">Total</th>
-<td colspan="1" >${customers.length}</td>
-</tr>
-</tfooter>
-
-</table>`;
-
-document.write(html);
+// Attach the listener to the list
+// It will fire when each <li> is clicked
+ul.addEventListener("click", hide);
