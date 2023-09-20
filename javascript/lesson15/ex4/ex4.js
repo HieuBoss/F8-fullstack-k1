@@ -42,7 +42,7 @@ btnUnderlined.addEventListener("click", function () {
 btnItalics.addEventListener("click", function () {
   document.execCommand("italic", false, null);
 });
-btnColor.addEventListener("change", function () {
+btnColor.addEventListener("mouseup", function () {
   document.execCommand("foreColor", false, this.value);
 });
 function getNameFile() {
@@ -67,12 +67,5 @@ btnTXT.addEventListener("click", () => {
   link.click();
 });
 btnPDF.addEventListener("click", () => {
-  nameFile = getNameFile();
-
-  var bolb = new Blob([text.innerText], { type: "application/pdf" });
-  var url = URL.createObjectURL(bolb);
-  var link = document.createElement("a");
-  link.href = url;
-  link.download = `${nameFile}.pdf`;
-  link.click();
+  html2pdf(text).save(nameFile);
 });
