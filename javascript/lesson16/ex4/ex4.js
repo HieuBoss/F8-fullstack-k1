@@ -2,20 +2,25 @@ const count = document.querySelector(".counter");
 const btn = document.querySelector(".btn");
 let timeStart = 30;
 let timeEnd = 0;
-count.textContent = timeStart;
-btn.disabled = true;
-
-let showTime = setInterval(function () {
-  count.textContent = timeStart;
-  timeStart--;
-  if (timeStart < timeEnd) {
-    clearInterval(showTime);
-    btn.disabled = false;
-    btn.href = "https://fullstack.edu.vn/";
-    btn.addEventListener("click", function () {
-      window.location.href = btn.href;
-    });
-  } else {
-    btn.disabled = true;
+function showTime(time) {
+  if (!showTime.lastTime) {
+    showTime.lastTime = time;
   }
-}, 1000);
+  if (time - showTime.lastTime >= 1000) {
+    showTime.lastTime = time;
+
+    if (timeStart < timeEnd) {
+      clearInterval(showTime);
+      btn.disabled = false;
+      btn.addEventListener("click", function () {
+        window.location.href = "https://fullstack.edu.vn/";
+      });
+    } else {
+      count.textContent = timeStart;
+      btn.disabled = true;
+      timeStart--;
+    }
+  }
+  requestAnimationFrame(showTime);
+}
+showTime();
