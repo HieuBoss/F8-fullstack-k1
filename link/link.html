@@ -38,14 +38,12 @@
     <main class="main">
       <!-- Html & Css -->
       <div class="container">
-        <input type="checkbox" name="menu" id="title-wrap" hidden checked />
-
-        <label for="title-wrap" class="title-wrap">
+        <button class="title-wrap">
           <h1 class="title title-html">
             Html & Css
             <i class="fa-solid fa-caret-down"></i>
           </h1>
-        </label>
+        </button>
 
         <div class="homework-wrapper">
           <div class="homework-container">
@@ -168,16 +166,14 @@
 
       <!-- Javascript -->
       <div class="container">
-        <input type="checkbox" name="menu" id="title-wrap-js" hidden checked />
-
-        <label for="title-wrap-js" class="title-wrap">
+        <button class="title-wrap">
           <h1 class="title title-js">
             JavaScript
             <i class="fa-solid fa-caret-down"></i>
           </h1>
-        </label>
+        </button>
 
-        <div class="homework-wrapper homework-wrapper__js">
+        <div class="homework-wrapper">
           <div class="homework-container">
             <div class="day-homework">
               <h2 class="day-title">lesson2 - day16</h2>
@@ -346,5 +342,17 @@
       </div>
       <!-- End Javascript -->
     </main>
+    <script>
+      var containers = document.querySelectorAll(".container");
+
+      containers.forEach(function (container) {
+        var button = container.querySelector("button.title-wrap");
+        var content = container.querySelector(".homework-wrapper");
+
+        button.addEventListener("click", () => {
+          content.classList.toggle("show");
+        });
+      });
+    </script>
   </body>
 </html>
