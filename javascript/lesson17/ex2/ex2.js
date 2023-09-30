@@ -1,38 +1,70 @@
+// ES6 với object,array
 /*
-tạo component tên là : image để hiển thị một hình ảnh
+1 Destructuring
 
-các thuộc tính
-link ->đường dẫn ảnh
-width ->chiều rộng
-height ->chiều cao
-style ->CSS inlines
+2 spread
+
+3 Enhance Object
 */
 
-Component.create("image-component", function () {
-  var shadow = this.attachShadow({ mode: "open" });
-  var link = this.getAttribute("link");
-  var width = this.getAttribute("width");
-  var height = this.getAttribute("height");
-  var style = this.getAttribute("style");
+// Destructuring => phá vỡ cấu trúc của array, object dể có thể truy cập vào các phần tử và lưu thành các biến riêng biệt
 
-  shadow.innerHTML = `<img src="${link}" width = "${width}" height = "${height}" style = "${style}"/>`;
-  var styleEl = document.createElement("style");
-  styleEl.textContent = `img{
-  box-shadow: 5px 5px 5px gray;
-}`;
-  shadow.appendChild(styleEl);
-});
-// componentImg.prototype = Object.create(HTMLElement.prototype);
-// componentImg.prototype.constructor = componentImg;
-// componentImg.prototype.connectedCallback = function () {};
-// customElements.define("componentImg-link", componentImg);
-Component.create("box-image", function () {
-  var style = document.createElement("style");
-  style.innerHTML = `.box-image{
-    border: 3px solid red;
-    padding:10px;
-    display:inline-block;
-  }`;
-  this.prepend(style);
-  this.innerHTML = `<div class="box-image">${this.innerHTML}</div>`;
-});
+// var user = {
+//   name: "Hoang An",
+//   age: 31,
+//   email: "hoangan@gmail.com",
+//   address: "Hai Duong",
+// };
+// // const name = user.name;
+// // const email = user.email;
+// const { name: _name, email, age, address = "Ha Noi" } = user;
+// console.log(_name, email, age, address);
+
+// const { name: _name, email, ...reset } = user;
+// console.log(_name, email);
+// console.log(reset);
+
+// const user = ["Hoàng An", "hoangan@gmail.com", "31", "Hồ Chí Minh", 5000000];
+// // const [username, email, , address, salary = 1000000] = user;
+// // console.log(username, email, address, salary);
+// const [username, email, ...reset] = user;
+// console.log(username, email);
+// console.log(reset);
+
+var customers = [
+  { id: 1, name: "nguyen van a" },
+  { id: 2, name: "nguyen van b" },
+  { id: 3, name: "nguyen van c" },
+];
+var html = customers
+  .map(({ id, name }, index) => `<h3>${index}-${id}-${name}</h3>`)
+  .join("");
+console.log(html);
+
+let a = 10;
+let b = 20;
+[a, b] = [b, a];
+console.log(`a=${a}`);
+console.log(`b=${b}`);
+
+const oldObj = {
+  name: "Hoang An F8",
+  email: "hoangan@gmail.com",
+};
+const newObj = {
+  course: "fullstack",
+  teacher: "Hoang an",
+  ...oldObj,
+};
+console.log(newObj);
+const oldArr = ["Hoang An", "hoangan@gmail.com"];
+const newArr = ["Fullstack", ...oldArr];
+
+console.log(newArr);
+
+const getTotal = (a, b) => {
+  console.log(a, b);
+};
+var values = [5, 10];
+// var values = { value1: 5, value2: 6 };
+getTotal(...values);

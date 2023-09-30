@@ -1,36 +1,12 @@
-// "use strict";
+const name = "Hoang An";
+const age = 31;
+const email = "hoangan@gmail.com";
 
-// a = 10;
-// console.log(a);
+const address = "HN";
 
-// var getMessage = function () {
-//   "use strict";
-//   a = 10;
-//   console.log(a);
+const user = { name, email, age, location: address };
+console.log(user);
+// const getInfo = ({ name, email, age }) => {
+//   console.log(name, email, age);
 // };
-// getMessage();
-// b = 20;
-
-// Hoisting
-/*
-là một cơ chế mặc định của js
-hoisting sẽ tự động đẩy phần khai báo lên trước 
-hoisting không lấy giá trị của biến mà chỉ đẩy phần khai báo
-*/
-"use strict";
-
-// a = 10;
-// console.log(a);
-// var a;
-
-// console.log(b);
-// var b = 10;
-
-getMSg();
-function getMSg() {
-  console.log("Hello");
-}
-getTotal();
-var getTotal = function () {
-  console.log("Total");
-};
+// getInfo({ name, email, age });
