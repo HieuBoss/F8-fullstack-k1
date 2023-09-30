@@ -3,28 +3,39 @@ import getModules from "./modules/module.js";
 getModules();
 const btn = document.querySelector(".btn");
 const action = document.querySelector(".action");
+const warning = document.createElement("div");
+const result = document.querySelector(".result");
+result.append(warning);
 var recognizing = false;
-if ((recognizing = false)) {
-  const warning = action.createElement("p");
-  warning.innerText = "Không thực hiện được yêu cầu";
-  warning.style.color = "red";
-  warning.style.border = "solid 1px green";
-  action.append("warning");
-}
+var css = {
+  padding: "10px",
+  margin: "20px 0",
+};
+Object.assign(warning.style, css);
 // Tạo biến để lưu trữ văn bản đã nhận dạng
 var messages = "";
-
 // Khởi tạo đối tượng nhận dạng giọng nói
 var SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
 var recognition = new SpeechRecognition();
+recognition.interimResults = false;
+recognition.continuous = false;
 recognition.lang = "vi-VN";
 
 // Xử lý sự kiện khi có kết quả từ nhận dạng
 recognition.onresult = function (e) {
   messages = e.results[0][0].transcript.toLowerCase();
-  action.textContent = `Đang tìm kiếm${messages}`;
-  results(messages);
+  action.textContent = `Đang tìm kiếm ${messages}`;
+
+  if (results(messages)) {
+    warning.innerText = "Thực hiện thành công";
+    warning.style.border = "solid 1px green";
+    warning.style.color = "green";
+  } else {
+    warning.innerText = "Không thực hiện được yêu cầu";
+    warning.style.border = "solid 1px red";
+    warning.style.color = "red";
+  }
 };
 
 // Xử lý sự kiện khi bắt đầu nhận dạng
@@ -62,27 +73,27 @@ function results(message) {
   switch (message) {
     case "google":
       window.open("https://google.com");
-      break;
+      return true;
 
     case "youtube":
       window.open("https://youtube.com");
-      break;
+      return true;
 
     case "facebook":
       window.open("https://facebook.com");
-      break;
+      return true;
 
     case "google dịch":
       window.open(
         "https://www.google.com/search?q=gg+d%E1%BB%8Bch&rlz=1C1CHZN_viVN977VN977&oq=&gs_lcrp=EgZjaHJvbWUqCQgAECMYJxjqAjIJCAAQIxgnGOoCMgkIARAjGCcY6gIyCQgCECMYJxjqAjIJCAMQIxgnGOoCMgkIBBAjGCcY6gIyCQgFECMYJxjqAjIJCAYQIxgnGOoCMgkIBxAjGCcY6gLSAQsxNjQ0MTg2ajBqN6gCCLACAQ&sourceid=chrome&ie=UTF-8"
       );
-      break;
+      return true;
 
     case "google maps":
     case "bản đồ":
     case "maps":
       window.open("https://maps.google.com");
-      break;
+      return true;
 
     default:
       if (
@@ -98,6 +109,7 @@ function results(message) {
 
         const url = `https://www.google.com/maps/search/${transcriptNew}`;
         window.open(url.trim());
+        return true;
       } else if (
         message.includes("bài hát") ||
         message.includes("mở bài hát") ||
@@ -111,6 +123,7 @@ function results(message) {
 
         const url = `https://zingmp3.vn/tim-kiem/tat-ca?q=${transcriptNew}`;
         window.open(url.trim());
+        return true;
       } else if (
         message.includes("video") ||
         message.includes("mở video") ||
@@ -124,7 +137,8 @@ function results(message) {
 
         const url = `https://www.youtube.com/results?search_query=${transcriptNew}`;
         window.open(url.trim());
+        return true;
       }
-      break;
+      return false;
   }
 }
