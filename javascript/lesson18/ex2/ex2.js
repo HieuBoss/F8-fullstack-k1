@@ -12,9 +12,7 @@ var css = {
   margin: "20px 0",
 };
 Object.assign(warning.style, css);
-// Tạo biến để lưu trữ văn bản đã nhận dạng
 var messages = "";
-// Khởi tạo đối tượng nhận dạng giọng nói
 var SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
 var recognition = new SpeechRecognition();
@@ -22,7 +20,6 @@ recognition.interimResults = false;
 recognition.continuous = false;
 recognition.lang = "vi-VN";
 
-// Xử lý sự kiện khi có kết quả từ nhận dạng
 recognition.onresult = function (e) {
   messages = e.results[0][0].transcript.toLowerCase();
   action.textContent = `Đang tìm kiếm ${messages}`;
@@ -37,36 +34,27 @@ recognition.onresult = function (e) {
     warning.style.color = "red";
   }
 };
-
-// Xử lý sự kiện khi bắt đầu nhận dạng
 recognition.onstart = function () {
   recognizing = true;
   action.textContent = "Đang nghe...";
   btn.style.background = "green";
   action.style.color = "black";
 };
-
-// Xử lý sự kiện khi kết thúc nhận dạng
 recognition.onend = function () {
   recognizing = false;
   action.textContent = "Đã kết thúc quá trình nghe!mong tìm kiếm đúng ý bạn...";
   btn.style.background = "red";
   action.style.color = "green";
 };
-
-// Xử lý sự kiện khi lỗi xảy ra trong quá trình nhận dạng
 recognition.onerror = function () {
   recognizing = false;
 };
-
-// Hàm bắt đầu ghi âm khi nút được nhấn
 function record() {
   if (!recognizing) {
     recognition.start();
   }
 }
 
-// Lắng nghe sự kiện khi nút được nhấn
 btn.addEventListener("click", record);
 
 function results(message) {
