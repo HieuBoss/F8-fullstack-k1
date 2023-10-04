@@ -1,0 +1,166 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Nunito", sans-serif;
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+#root {
+  width: 800px;
+}
+.form {
+  text-align: center;
+}
+.heading {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+}
+.heading span {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  background-image: linear-gradient(90deg, #60fa74 0%, #1b0596 100%);
+}
+.form-search {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+}
+.form-group {
+  position: relative;
+  width: 80%;
+}
+.input-search,
+.input-add {
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid rgba(206, 206, 206, 0.432);
+}
+.input-add {
+  width: 90%;
+}
+.input-search[placeholder],
+.input-add[placeholder] {
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.btn-search {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  padding: 10px 15px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  background-color: blue;
+  color: #fff;
+  border: none;
+}
+.btn-search:hover {
+  background-color: rgb(0, 0, 177);
+}
+.btn-add {
+  width: 15%;
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: #059669;
+  color: #fff;
+}
+.btn-add:hover {
+  background-color: #036143;
+}
+
+.form-add {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.493);
+  /* display: none; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.group-add {
+  background-color: #fff;
+  width: 450px;
+  padding: 30px 0 0 0;
+  left: 45%;
+  top: 50%;
+  border-radius: 10px;
+}
+.group-add hr {
+  margin-top: 20px;
+  border: 1px solid rgba(206, 206, 206, 0.432);
+}
+.btn-save {
+  padding: 12px 20px;
+  border-radius: 5px;
+  border: none;
+  background: #059669;
+  color: #fff;
+  margin: 20px;
+  font-size: 1.1rem;
+}
+.btn-cancel {
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  border: 1px solid gray;
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
+}
+.form-show {
+  width: 95%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.form-btn,
+p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn {
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+}
+.delete {
+  background: rgb(206, 3, 3);
+}
+.edit {
+  background: blue;
+}
+.check {
+  background: rgb(204, 204, 204);
+}
+.delete:hover {
+  background-color: rgb(134, 2, 2);
+}
+.edit:hover {
+  background: rgb(1, 1, 190);
+}
+.check:hover {
+  background: green;
+}
