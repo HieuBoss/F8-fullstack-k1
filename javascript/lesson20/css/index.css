@@ -5,12 +5,13 @@
 }
 body {
   background: aliceblue;
+  color: #ccc;
 }
 .container {
   width: 80%;
   margin: 0 auto;
   /* border: 2px solid black; */
-  background: rgb(224, 224, 224);
+  background: rgb(99, 98, 85);
 }
 .container-head {
   display: flex;
@@ -23,7 +24,7 @@ body {
   width: 120px;
 }
 .title-heading {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   color: gold;
   margin-right: 20px;
 }
@@ -34,10 +35,11 @@ body {
   font-size: 2rem;
 }
 .posts-item {
-  padding: 0 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 30px;
 }
 .posts-item .name {
   font-size: 1.6rem;

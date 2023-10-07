@@ -2,8 +2,33 @@
   "posts": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "title": "Dây chuyền",
+      "content": "Dây chuyền là một trong những phụ kiện trang sức khá thân thuộc đối với cả nam và nữ giới. Dây chuyền yêu cầu tính thẩm mỹ và cẩn trọng cao hơn so với những món đồ phụ kiện khác. Sai một ly đi một dặm, và bạn có thể trông giống thiếu niên nổi loạn hay dân du mục. Dây chuyền vốn được thiết kế để kết hợp với trang phục nữ, vì vậy tốt nhất nên tối giản. Dây mỏng vừa với mặt dây bạc, đồng và vàng có thể đi cùng với áo phông cổ chữ V. Vòng da hay chuỗi hạt với áo sơ mi cotton hay bằng lanh là sự kết hợp tuyệt vời. Do vậy mà dây chuyền trở thành phụ kiện không thể thiếu đối với các cánh mày râu.",
+      "thumbnail_url": "./img/day_chuyen.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Vòng tay",
+      "content": "Vòng tay cũng là phụ kiện thời trang mà các chàng trai không thể bỏ lỡ. Trong khi một số người khó tính khăng khăng rằng đồng hồ là thứ duy nhất nam giới nên đeo trên cổ tay, các xu hướng đang lên đã chứng minh điều ngược lại. Nam giới thường ít khi chú ý tới trang sức, nhưng mối quan tâm này đã tăng lên những năm trở lại đây. Vòng tay là thứ hoàn hảo để thể hiện cá tính khi kết hợp với áo thun hoặc áo khoác nhẹ. Vòng tay bằng da có thể đi với bất kỳ trang phục nào, và tùy theo từng trường hợp sẽ đem lại hình ảnh công sở hay năng động. Đa dạng hơn là vòng hạt hay tết hoặc hơn nữa là phụ kiện mạ vàng hay bạc.",
+      "thumbnail_url": "./img/vong_tay.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Nhẫn kiểu",
+      "content": "Một trong những phụ kiện trang sức không thể thiếu đối với các chàng trai chính là nhẫn. Trong khi các trang sức khác bằng vàng, vàng hồng và bạc không không phải là vấn đề, thì nhẫn bằng các kim loại trên không khác gì nhẫn cưới. Để khắc phục điều này, hãy chọn thiết kế từ bạc oxy hóa, đồng, kẽm, hay vàng hồng, hoặc bạc được chạm khắc các loại hoa văn khác nhau. Với trang phục thường ngày, có thể sử dụng trang sức từ nhiều nguyên liệu hay nhiều mảnh khác nhau (ví dụ như bạc và đen lì) cho buổi tối.",
+      "thumbnail_url": "./img/nhan_nam.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Khuyên tai",
+      "content": "Trong những nam gần đây, khuyên tai cho nam như một cơn bão quay trở lại khuấy đảo thế giới thời trang. Khuyên tai nam rất đa dạng với các kiểu dáng: khuyên đinh tán, khuyên nụ đá, khuyên chữ, khuyên hoạ tiết, khuyên vòng…\nNếu bạn mặc một bộ vest hoặc thường xuyên phải mặc một bộ đồ trang trọng vì tính chất công việc thì một chiếc khuyên nụ kim cương nhỏ là lựa chọn tốt nhất. Nếu bạn có nước da trắng thì đeo khuyên bạc là tốt nhất, còn nếu bạn có một làn da ngăm thì hãy đeo một chiếc khuyên tai bằng vàng nhé. Tất nhiên là khuyên tai kim cương vẫn phù hợp với tất cả mọi người.",
+      "thumbnail_url": "./img/khuyen_tai.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Khuy măng sét",
+      "content": "Khuy măng sét là một trong những phụ kiện ít được nhắc đến nhưng lại là món đồ không thể thiếu đối với nam giới nếu muốn thay đổi phong cách của mình một chút. Nhỏ và kín đáo, khuy măng sét là thứ lý tưởng cho các chàng trai khi kết hợp với những chiếc áo sơ mi màu trắng hay màu be nhẹ nhàng bằng vải lanh hoặc cotton.",
+      "thumbnail_url": "./img/khuy_ao.jpg"
     }
   ]
 }
