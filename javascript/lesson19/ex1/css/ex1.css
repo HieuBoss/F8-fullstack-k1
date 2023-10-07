@@ -145,6 +145,7 @@ p {
   padding: 10px;
   border-radius: 5px;
   color: #fff;
+  border: none;
 }
 .delete {
   background: rgb(206, 3, 3);

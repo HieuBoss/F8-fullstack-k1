@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnSave = document.querySelector(".btn-save");
   const inputAdd = document.querySelector(".input-add");
   const formAdd = document.querySelector(".form-add");
-  const btnDelete = document.querySelector(".delete");
+  const btnDelete = document.querySelectorAll(".btn.delete");
+
   btnAdd.addEventListener("click", (e) => {
     e.preventDefault();
     formAdd.classList.toggle("show");
@@ -33,6 +34,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     postAndRender(inputValue, formAdd);
   });
-  btnSearch.addEventListener("click", () => {});
-  remove();
+
+  btnDelete.forEach((deleteBtn) => {
+    deleteBtn.addEventListener("click", async () => {
+      const success = await remove(id);
+
+      if (success) {
+        get();
+      }
+    });
+  });
 });

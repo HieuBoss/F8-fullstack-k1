@@ -42,20 +42,20 @@ export function renderItem(users) {
     return;
   }
 
-  users.forEach(({ name }) => {
+  users.forEach(({ name, id }) => {
     const formShowHTML = `  
       <div class="form-show">
         <p>${name}</p>
         <div class="form-btn">
-          <div class="btn delete">
+          <button class="btn delete" data-id="removeTodo(${id})">
             <i class="fa-solid fa-trash-can"></i>
-          </div>
-          <div class="btn edit">
+          </button>
+          <button class="btn edit" onclick="editTodo(${id})">
             <i class="fa-solid fa-pen-to-square"></i>
-          </div>
-          <div class="btn check">
+          </button>
+          <button class="btn check" onclick="checkTodo(${id})">
             <i class="fa-solid fa-check-to-slot"></i>
-          </div>
+          </button>
         </div>
       </div>`;
 
@@ -82,21 +82,23 @@ export const post = async (data) => {
   }
 };
 
-export const remove = async (data) => {
+export const remove = async (id) => {
   try {
-    const response = await fetch(apiUrl, {
+    const response = await fetch(apiUrl + `/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
     });
-    if (!response.ok) {
-      throw new Error("Lỗi trong quá trình DELETE");
+
+    if (response.ok) {
+      console.log("xóa thành công");
+      return true;
+    } else {
+      throw new Error("Lỗi trong quá trình xóa");
     }
-    return response;
   } catch (err) {
-    console.error("Error in DELETE:", err.message);
-    return null;
+    console.error("Lỗi trong quá trình xóa:", err.message);
+    return false;
   }
 };
