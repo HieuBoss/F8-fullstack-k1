@@ -8,9 +8,8 @@ body {
   color: #ccc;
 }
 .container {
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
-  /* border: 2px solid black; */
   background: rgb(99, 98, 85);
 }
 .container-head {
@@ -48,4 +47,9 @@ body {
   font-size: 1.3rem;
   line-height: 25px;
   margin: 20px 0;
+}
+.loading {
+  font-size: 2rem;
+  color: black;
+  display: none;
 }

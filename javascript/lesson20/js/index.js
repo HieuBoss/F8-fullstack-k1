@@ -1,6 +1,19 @@
 import { config } from "./config.js";
 import { client } from "./client.js";
 
+const showLoading = () => {
+  const loadingElement = document.querySelector(".loading");
+  if (loadingElement) {
+    loadingElement.style.display = "block";
+  }
+};
+
+const hideLoading = () => {
+  const loadingElement = document.querySelector(".loading");
+  if (loadingElement) {
+    loadingElement.style.display = "none";
+  }
+};
 const render = (posts) => {
   const postsEl = document.querySelector(".posts");
   postsEl.innerText = ``;
@@ -18,7 +31,7 @@ const render = (posts) => {
       p.innerText = content;
       const image = document.createElement("img");
       image.src = thumbnail_url;
-      // console.log(image);
+
       postsItem.append(h3);
       postsItem.append(p);
       postsItem.append(image);
@@ -27,10 +40,16 @@ const render = (posts) => {
 };
 
 const getPosts = async (query = {}) => {
-  const queryString = new URLSearchParams(query).toString();
-  const { data } = await client.get(`/posts?${queryString}`);
-  render(data);
-  // console.log(data);
+  showLoading();
+  try {
+    const queryString = new URLSearchParams(query).toString();
+    const { data } = await client.get(`/posts?${queryString}`);
+    render(data);
+  } catch (error) {
+    console.log(`Đang có lỗi ở ${error}`);
+  } finally {
+    hideLoading();
+  }
 };
 
 getPosts();
