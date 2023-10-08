@@ -1,5 +1,8 @@
 import { config } from "./config.js";
 import { client } from "./client.js";
+let limit = 5;
+let page = 1;
+let isLoading = false;
 
 const showLoading = () => {
   const loadingElement = document.querySelector(".loading");
@@ -40,16 +43,34 @@ const render = (posts) => {
 };
 
 const getPosts = async (query = {}) => {
+  if (isLoading) {
+    return;
+  }
+  isLoading = true; // Đặt biến isLoading thành true để tránh gọi nhiều lần
   showLoading();
   try {
-    const queryString = new URLSearchParams(query).toString();
-    const { data } = await client.get(`/posts?${queryString}`);
+    const { data } = await client.get(
+      `/posts` + `?_limit${limit}&_start=${(page - 1) * limit}`
+    );
+    if (data !== "") {
+      page++;
+    }
     render(data);
   } catch (error) {
     console.log(`Đang có lỗi ở ${error}`);
   } finally {
     hideLoading();
+    isLoading = false;
   }
 };
+
+window.addEventListener("scrollend", () => {
+  if (
+    window.innerHeight + window.scrollY >= document.body.offsetHeight &&
+    page <= 5
+  ) {
+    getPosts();
+  }
+});
 
 getPosts();
