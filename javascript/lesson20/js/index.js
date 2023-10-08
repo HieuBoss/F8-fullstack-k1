@@ -19,7 +19,10 @@ const hideLoading = () => {
 };
 const render = (posts) => {
   const postsEl = document.querySelector(".posts");
-  postsEl.innerText = ``;
+  const h2 = document.createElement("h2");
+  h2.classList.add("content-head");
+  h2.innerText = "5 món phụ kiện trang sức cho nam giới";
+  postsEl.append(h2);
   if (posts.length) {
     posts.forEach(({ id, title, content, thumbnail_url }) => {
       const postsItem = document.createElement("div");
@@ -50,12 +53,13 @@ const getPosts = async (query = {}) => {
   showLoading();
   try {
     const { data } = await client.get(
-      `/posts` + `?_limit${limit}&_start=${(page - 1) * limit}`
+      `/posts` + `?_limit=${limit}&_start=${(page - 1) * limit}`
     );
-    if (data !== "") {
+    if (data.length !== 0) {
+      console.log(data);
       page++;
+      render(data);
     }
-    render(data);
   } catch (error) {
     console.log(`Đang có lỗi ở ${error}`);
   } finally {
