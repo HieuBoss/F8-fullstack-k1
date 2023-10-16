@@ -86,6 +86,7 @@ const renderTotal = (quizs) => {
                 nextPage();
               } else {
                 pTotal.classList.add("is-false");
+                nextPage();
               }
             }
           }

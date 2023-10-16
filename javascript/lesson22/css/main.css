@@ -1,0 +1,170 @@
+.container {
+  max-width: 60%;
+  position: relative;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-post {
+  display: flex;
+  flex-direction: column;
+  background: pink;
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+.form-control label {
+  font-weight: bold;
+}
+
+.form-control input[type="text"],
+.form-control textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #87ceeb;
+  border-radius: 5px;
+  outline: none;
+}
+
+.form-control button {
+  width: 100%;
+  padding: 10px;
+  background: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-control button:hover {
+  background: #187bcd;
+}
+
+section {
+  margin-top: 20px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section p {
+  margin: 10px 0;
+  font-weight: bold;
+  background: orange;
+  padding: 10px;
+}
+
+.border {
+  width: 100%;
+  margin: 23px 0px;
+}
+
+.form label {
+  margin-bottom: 10px;
+}
+
+.profile {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile li {
+  font-weight: bold;
+}
+
+.profile li:nth-child(2) {
+  margin-left: auto;
+}
+
+.profile li:nth-child(1) span {
+  color: #1e90ff;
+}
+
+.logout a {
+  text-decoration: none;
+  color: #1e90ff;
+  border: 1px solid #1e90ff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.logout a:hover {
+  background-color: #1e90ff;
+  color: #fff;
+}
+
+.btn-create-account {
+  margin-top: 20px;
+  background: #1e90ff;
+  color: white;
+}
+
+.btn-create-account:hover {
+  background: #1e60a2;
+  color: white;
+}
+
+.btn-Login,
+.btn-Login-page,
+.btn-Register-form {
+  background: #1e90ff;
+  color: white;
+}
+
+.btn-Login:hover,
+.btn-Login-page:hover,
+.btn-Register-form:hover {
+  background: #1e60a2;
+  color: white;
+}
+
+.login {
+  width: 60%;
+  margin: 0 auto;
+}
+.btn-Register-form {
+  margin: 15px auto;
+  width: 60%;
+}
+
+.register {
+  margin-bottom: 10px;
+}
+
+.title-textarea {
+  margin: 0;
+}
+
+.form-post button {
+  background: #1966b6bf;
+}
+
+.form-post .form {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-center {
+  padding: 10px;
+  background: none;
+  width: 100%;
+  color: #333;
+  font-size: 1.4rem;
+  border-radius: 21px;
+}
+
+.container .text-center-register {
+  background: none;
+  color: #333;
+  width: 100%;
+}
