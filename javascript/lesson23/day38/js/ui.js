@@ -174,7 +174,7 @@ function renderHome() {
 }
 
 function renderLoginPage() {
-  const loginHTML = `<div class="container py-3">
+  const loginHTML = `<div class="container py-3">Em gửi tạm bh xong em xóa dòng này :&#41;&#41;&#41;
     <h2 class="text-center btn-click__login">Đăng nhập</h2>
     <hr />
     <div class="login-group" style="display:none">
