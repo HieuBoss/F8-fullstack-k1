@@ -91,6 +91,19 @@ const renderForm = () => {
   textareaElement.style.padding = "20px";
   textareaElement.style.display = "block";
 
+  const divDate = document.createElement("div");
+  divDate.className = "div-date";
+
+  const labelDate = document.createElement("label");
+  labelDate.textContent = "Enter Your Date";
+  labelDate.className = "label-date";
+
+  const inputDate = document.createElement("input");
+  inputDate.className = "input-date";
+  inputDate.name = "date";
+  inputDate.type = "date";
+  inputDate.style.marginBottom = "20px";
+
   const buttonElement = document.createElement("button");
   buttonElement.classList.add("btn", "btn-primary", "d-block");
   buttonElement.type = "submit";
@@ -99,6 +112,10 @@ const renderForm = () => {
 
   divElement.appendChild(labelElement);
   divElement.appendChild(inputElement);
+
+  divDate.appendChild(labelDate);
+  divDate.appendChild(inputDate);
+
   formElement.appendChild(divElement);
   formElement.appendChild(titleTextareaElement);
 

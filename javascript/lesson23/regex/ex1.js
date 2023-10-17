@@ -22,7 +22,7 @@ cú pháp /regex/modifier
 g-global
 i-không phân biệt chữ hoa chữ thường
 m-multi line = khớp nhiều dòng
-s-single line = khớp nhiều dòng
+s-single line = khớp 1 dòng
 
 các kí hiệu cơ bản
 -char -> tìm chuỗi char trong chuỗi gốc
