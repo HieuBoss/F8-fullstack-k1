@@ -83,7 +83,7 @@ const renderForm = () => {
 
   const titleTextareaElement = document.createElement("p");
   titleTextareaElement.className = "title-textarea";
-  titleTextareaElement.textContent = "Enter your title";
+  titleTextareaElement.textContent = "Enter your content";
 
   const textareaElement = document.createElement("textarea");
   textareaElement.name = "content";
@@ -128,16 +128,44 @@ const renderForm = () => {
   profile.insertAdjacentElement("afterend", formElement);
 
   formElement.addEventListener("submit", (e) => {
+    e.preventDefault();
     const input = document.querySelector("input[name=title]");
     const textarea = document.querySelector("textarea[name=content]");
+    const inputDate = document.querySelector("input[name=date]");
+    const textDate = document.querySelector(".label-date");
+    const daysOfWeek = [
+      "Chủ Nhật",
+      "Thứ Hai",
+      "Thứ Ba",
+      "Thứ Tư",
+      "Thứ Năm",
+      "Thứ Sáu",
+      "Thứ Bảy",
+    ];
+    const today = new Date().getDate();
+    const date = inputDate.value;
 
     const title = escapeOutput(input.value);
     const content = escapeOutput(textarea.value);
-    e.preventDefault();
 
-    postBlog({ title, content }).then(() => {
-      render();
-    });
+    const targetDate = new Date(date).getDate();
+    const targetWeek = daysOfWeek[new Date(date).getDay()];
+    const targetMonth = new Date(date).getMonth();
+    const sumDate = targetDate - today;
+
+    if (!date) {
+      postBlog({ title, content }).then(() => {
+        render();
+      });
+    } else {
+      if (sumDate > 0) {
+        textDate.textContent = `Bạn sẽ đăng bài vào ${sumDate} ngày nữa,  ${targetWeek}, ngày ${targetDate} tháng ${targetMonth} lúc 00:00:00`;
+      } else {
+        textDate.textContent = `${targetWeek}, ngày ${targetDate} tháng ${targetMonth} đã qua được ${Math.abs(
+          sumDate
+        )} ngày không thể đăng được!!!`;
+      }
+    }
   });
 };
 
@@ -174,7 +202,7 @@ function renderHome() {
 }
 
 function renderLoginPage() {
-  const loginHTML = `<div class="container py-3">Em gửi tạm bh xong em xóa dòng này :&#41;&#41;&#41;
+  const loginHTML = `<div class="container py-3">
     <h2 class="text-center btn-click__login">Đăng nhập</h2>
     <hr />
     <div class="login-group" style="display:none">
@@ -192,7 +220,7 @@ function renderLoginPage() {
         <input
           type="password"
           class="form-control password"
-          value="12345678"
+          value="Hieu12345"
         />
       </div>
       <div class="d-grid">
