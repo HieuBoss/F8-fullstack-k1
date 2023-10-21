@@ -52,7 +52,7 @@ dấu (/)
 */
 
 const str = "hieu.@gmail.com";
-const pattern = /^[a-z][a-z\.0-9-_]{3,}@[a-z-_\.0-9]+\.[a-z]{2,}$/;
+const pattern = /^[a-z][a-z\.0-9-_]{3,}@[a-z-_\.0-9]+\.[a-z]{2,}/;
 // const pattern = /^[a-zA-Z]/;
 const check = pattern.test(str);
 console.log(check);

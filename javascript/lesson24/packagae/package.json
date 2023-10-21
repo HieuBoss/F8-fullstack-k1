@@ -1,0 +1,17 @@
+{
+  "name": "packagae",
+  "version": "1.0.0",
+  "description": "Demo hoc npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "f8": "echo\"Hello f8\""
+  },
+  "keywords": [],
+  "author": "duy hieu f8",
+  "license": "ISC",
+  "dependencies": {
+    "datejs": "^1.0.0-rc3",
+    "lodash": "^4.17.21"
+  }
+}
