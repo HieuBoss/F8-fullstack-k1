@@ -10,4 +10,6 @@ export const postBlog = async (value) => {
     "/blogs/",
     value
   );
+
+  return { dataResponse, response };
 };

@@ -147,16 +147,20 @@ const renderForm = () => {
 
     const title = escapeOutput(input.value);
     const content = escapeOutput(textarea.value);
-
+    console.log(title, content);
     const targetDate = new Date(date).getDate();
     const targetWeek = daysOfWeek[new Date(date).getDay()];
     const targetMonth = new Date(date).getMonth();
     const sumDate = targetDate - today;
 
     if (!date) {
-      postBlog({ title, content }).then(() => {
-        render();
-      });
+      if (checkLogin) {
+        postBlog({ title, content }).then(() => {
+          render();
+        });
+      } else {
+        alert("Het han dang nhap!");
+      }
     } else {
       if (sumDate > 0) {
         textDate.textContent = `Bạn sẽ đăng bài vào ${sumDate} ngày nữa,  ${targetWeek}, ngày ${targetDate} tháng ${targetMonth} lúc 00:00:00`;
@@ -212,15 +216,13 @@ function renderLoginPage() {
         <input
           type="email"
           class="form-control email"
-          value="hieu@gmail.com"
         />
       </div>
       <div class="mb-3">
-        <label for="">Password</label>
+        <label for="">Password</label>s
         <input
           type="password"
           class="form-control password"
-          value="Hieu12345"
         />
       </div>
       <div class="d-grid">

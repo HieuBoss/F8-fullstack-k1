@@ -9,12 +9,13 @@ export const client = {
     this.serverApi = url;
   },
 
-  send: async function (url, method = "GET", body = null, token = null) {
+  send: async function (url, method = "GET", body = null) {
     url = `${this.serverApi}${url}`;
 
     const headers = {
       "Content-Type": "application/json",
     };
+    const token = localStorage.getItem("access_token");
     if (token) {
       headers["Authorization"] = `Bearer ${token}`;
     }
@@ -31,19 +32,19 @@ export const client = {
     return { response, data };
   },
 
-  get: function (url, token = null) {
-    return this.send(url, "GET", null, token);
+  get: function (url) {
+    return this.send(url, "GET", null);
   },
-  post: function (url, body = {}, token = null) {
-    return this.send(url, "POST", body, token);
+  post: function (url, body = {}) {
+    return this.send(url, "POST", body);
   },
-  put: function (url, body = {}, token = null) {
-    return this.send(url, "PUT", body, token);
+  put: function (url, body = {}) {
+    return this.send(url, "PUT", body);
   },
-  patch: function (url, body = {}, token = null) {
-    return this.send(url, "PATCH", body, token);
+  patch: function (url, body = {}) {
+    return this.send(url, "PATCH", body);
   },
-  delete: function (url, token = null) {
-    return this.send(url, "DELETE", null, token);
+  delete: function (url) {
+    return this.send(url, "DELETE", null);
   },
 };
