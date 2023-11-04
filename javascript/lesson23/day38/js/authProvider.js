@@ -1,4 +1,4 @@
-// chuứa những cái lq đến  Authentication
+// chứa những cái lq đến  Authentication
 import { client } from "./client.js";
 
 export const getProfile = () => {
