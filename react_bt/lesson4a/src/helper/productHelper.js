@@ -1,4 +1,4 @@
-import { getProduct } from "../Service/productService";
+import { getProduct } from "../service/productService";
 
 export const handleGetProductList = async () => {
   try {
