@@ -1,4 +1,4 @@
-import { login } from "../Service/authService";
+import { login } from "../service/authService";
 
 export const handleLogin = async (data) => {
   try {
