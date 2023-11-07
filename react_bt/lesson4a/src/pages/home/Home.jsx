@@ -1,7 +1,7 @@
 import React, { useEffect, useState, createContext, useContext } from "react";
 import { handleGetProductList } from "../../helper/productHelper";
 import ProductList from "../../Component/productLists/ProductList";
-
+import Cart from "../../Component/cart/Cart";
 export const MyContext = React.createContext();
 
 export default function Home() {
@@ -25,6 +25,7 @@ export default function Home() {
   return (
     <MyContext.Provider value={{ cart, addToCart }}>
       <ProductList productList={productList} />
+      <Cart />
     </MyContext.Provider>
   );
 }
