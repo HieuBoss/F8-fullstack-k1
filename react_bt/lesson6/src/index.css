@@ -1,0 +1,42 @@
+body {
+  transition: background-color 0.3s ease;
+}
+
+.light-mode {
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.light-mode button {
+  background: #319795;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+.light-mode button label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dark-mode button {
+  background: #0e706f;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+}
+.dark-mode button label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
