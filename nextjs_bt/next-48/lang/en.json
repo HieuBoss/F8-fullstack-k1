@@ -1,0 +1,14 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About"
+  },
+  "page": {
+    "home": {
+      "userInfo": "User Info",
+      "fullName": "FullName:Nguyen Duy Hieu",
+      "studyAt": "Study at: F8-Learning Programming is not difficult",
+      "desc": " Desire to become a top coder"
+    }
+  }
+}
