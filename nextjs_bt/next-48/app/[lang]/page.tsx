@@ -9,7 +9,7 @@ const Home = async ({params: {lang}}: { params: { lang: Locale } }) => {
     return (
         <>
           <div style={{display: "flex"}}>
-              <div style={{width : "30%"}} >
+              <div style={{width : "30%", border:"5px solid red"}} >
                   <img src={"https://vnn-imgs-a1.vgcloud.vn/image1.ictnews.vn/_Files/2020/03/17/trend-avatar-1.jpg"} alt={"img"}/>
               </div>
               <div  style={{ width : "70%", paddingLeft : " 20px 60px"}} >
