@@ -1,0 +1,9 @@
+.list {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+.menu li.active a {
+  color: red;
+  font-size: 1.5rem;
+}
