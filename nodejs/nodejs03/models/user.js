@@ -13,8 +13,18 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "users_id",
         as: "phones",
       });
+      User.belongsTo(models.Group, {
+        foreignKey: "group_id",
+        as: "group",
+      });
+      User.belongsToMany(models.Course, {
+        through: "users_courses",
+        foreignKey: "users_id",
+        as: "courses",
+      });
     }
   }
+
   User.init(
     {
       id: {
