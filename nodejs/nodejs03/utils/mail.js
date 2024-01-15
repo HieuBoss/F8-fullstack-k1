@@ -16,5 +16,6 @@ const sendMail = async (to, subject, message) => {
     subject, // Subject line
     html: message, // html body
   });
+  return info;
 };
 module.exports = sendMail;
