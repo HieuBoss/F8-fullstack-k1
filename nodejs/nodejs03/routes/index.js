@@ -12,6 +12,6 @@ router.get("/send-mail", async (req, res) => {
     "Hello Hiếu",
     "Tôi là sinh viên trường bạn đây"
   );
-  res.send("Gui mail");
+  res.send("Gửi mail thành công");
 });
 module.exports = router;
